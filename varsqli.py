@@ -6,8 +6,6 @@ import argparse
 import os
 from colorama import Fore
 from colorama import Style
-from bs4 import BeautifulSoup
-from lxml import etree
 
 colorama.init()
 

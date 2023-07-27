@@ -143,7 +143,7 @@ if URL_TARGET:
                 result_2 = requests.get(URL_TARGET + payload_2)
                 query_vuln = "*%27"
                 check_vuln_1 = requests.get(URL_TARGET + query_vuln)
-                if result_2 == 200:
+                if result_2.status_code == 200:
                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Server Accepted..")
                     if "at line" in check_vuln_1.text:
                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")

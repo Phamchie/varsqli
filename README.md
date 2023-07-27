@@ -26,8 +26,10 @@ To set up VarSQLi, follow these steps:
 Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
 
 # VarSQLi Check Columns
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-07-27-17-01-26-25.jpg">
 1. command :
-2. python3 varsqli.py -u <url> --check-columns
+2.  python3 varsqli.py -u <url> --check-columns
+3.  more type : python3 varsqli -h for helping
+
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-07-27-17-01-26-25.jpg">
 
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

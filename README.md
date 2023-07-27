@@ -10,4 +10,17 @@ Using VarSQLi or any unauthorized database exploitation tool can lead to impriso
 Instead of relying on database exploitation tools, we should focus on enhancing our knowledge of security, understanding common security vulnerabilities, and implementing security measures to protect our systems and data. Collaborating with security experts and complying with legal regulations will ensure safety and ethical use of information technology
 
 # setup x install tool
+To set up VarSQLi, follow these steps:
 
+1. Clone the VarSQLi repository from GitHub using the following command:
+git clone https://github.com/varsql/varsql.git
+
+2. Navigate to the VarSQLi directory:
+cd varsql
+
+3. Install the required dependencies by running the setup script:
+python3 setup.py install
+
+Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
+
+Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

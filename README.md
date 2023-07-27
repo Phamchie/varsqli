@@ -43,6 +43,7 @@ To mine a target I will take my target example https://testphp.vulnweb.com/listp
 
 1. Then the result is a link with the payload, now I will check it to see if it has any dbs information.
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-07-27-17-52-49-61.jpg">
+
 1. It's great that it succeeded in getting MySQL's dbs information
  
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

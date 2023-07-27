@@ -13,7 +13,7 @@ Instead of relying on database exploitation tools, we should focus on enhancing 
 To set up VarSQLi, follow these steps:
 
 1. Clone the VarSQLi repository from GitHub using the following command:
-2. git clone https://github.com/varsql/varsql.git
+2. git clone https://github.com/Phamchie/varsql
 3. Navigate to the VarSQLi directory:
 4. cd varsql
 5. Install the required dependencies by running the setup script:

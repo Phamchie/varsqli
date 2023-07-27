@@ -18,6 +18,9 @@ To set up VarSQLi, follow these steps:
 4. cd varsql
 5. Install the required dependencies by running the setup script:
 6. python3 setup.py
+
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-07-27-16-53-22-05.jpg">
+
 7. python3 varsqli.py --help
 
 Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.

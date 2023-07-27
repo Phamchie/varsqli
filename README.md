@@ -30,6 +30,12 @@ Once the setup is complete, you can start using VarSQLi to identify and exploit 
 2.  python3 varsqli.py -u <url> --check-columns
 3.  more type : python3 varsqli -h for helping
 
+To mine a target I will take my target example https://testphp.vulnweb.com/listproduct?cat=1
+ 1. For the initial exploit, I use the command ( python3 varsqli.py -u https://testphp.vulnweb.com/listproduct?cat=1 --check-columns ) to check the MySQL columns
+ 2. After checking, it will bypass the payloads as Union Select 1,2,3
+ 3. If bypass is successful and get the number of bypass columns, it will display find all columns : ( number columns )
+ 4. Image : 
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-07-27-17-01-26-25.jpg">
+Once I got the column count I used the payload as ( python3 varsqli.py -u https://testphp.vulnweb.com/listproduct?cat=1 --check-columns --dump-dbs ) to check the username of the column.  mysql , database name of mysql, version of mysql
 
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

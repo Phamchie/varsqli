@@ -39,4 +39,8 @@ To mine a target I will take my target example https://testphp.vulnweb.com/listp
 
 1. Once I got the column count I used the payload as ( python3 varsqli.py -u https://testphp.vulnweb.com/listproduct?cat=1 --check-columns --dump-dbs ) to check the username of the column.  mysql , database name of mysql, version of mysql
 
+<img src="https://github.com/Phamchie/varsqli/blob/main/Screenshot_2023-07-27-17-48-29-99.jpg?raw=true">
+
+1. Then the result is a link with the payload, now I will check it to see if it has any dbs information.
+
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

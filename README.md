@@ -46,5 +46,8 @@ To mine a target I will take my target example https://testphp.vulnweb.com/listp
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/IMG_20230727_175717.jpg">
 
 1. It's great that it succeeded in getting MySQL's dbs information
+
+# Ending ?
+1. Similarly, payloads like ( --dump-tables, -T < Name Dbs > , --dump-columns, -C < Name Dbs > ) you can substitute for --dump-bs to get more information  information about the database
  
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

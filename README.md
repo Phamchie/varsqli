@@ -13,7 +13,7 @@ Using VarSQLi or any unauthorized database exploitation tool can lead to impriso
 
 > Instead of relying on database exploitation tools, we should focus on enhancing our knowledge of security, understanding common security vulnerabilities, and implementing security measures to protect our systems and data. Collaborating with security experts and complying with legal regulations will ensure safety and ethical use of information technology
 
-# setup x install tool
+### setup x install tool
 To set up VarSQLi, follow these steps:
 
 1. Clone the VarSQLi repository from GitHub using the following command:
@@ -32,7 +32,7 @@ python3 varsqli.py --help
 ```
 Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
 
-# How To Injection - Exploit ?
+#### How To Injection - Exploit ?
 1. You can see that in the `--help` section, there is only one mode, `--url` to update the url to attack
 ```
               ___
@@ -79,6 +79,7 @@ options:
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-50-35-49.jpg">
 
 1. so we've come to the end, so what's the ending?
+
 # Ending ?
 A tip and note to use :
 1. Can you see how dangerous the SQL injection vulnerability is, here is a piece of advice for you, this tool is only for the nature, is to show the database name, and will never provide  dump database for users only, to ensure the security of network security

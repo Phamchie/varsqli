@@ -5,17 +5,9 @@ import re
 import os
 
 def banner():
-    print('''
-              ___
- _____         H  _____     _ _  {1.1.5}
-|  |  |___ ___[,]|   __|___| |_| 
-|  |  | .'|  _[(]|__   | . | | | {Pham Chien}
- \___/|__,|_| [)]|_____|_  |_|_|
-               V         |_|  ghostmanews.blogspot.com
-
-               
-[+] Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
-''')
+    with open('/hello/hello.txt', 'r') as files:
+        content = files.read()
+        print(content)
 banner()
 parser = argparse.ArgumentParser(description='VarSQLi - Auto SQL Injection tools') 
 parser.add_argument('--url', dest='url', help='URL Target (ex : https://test.com/yourpath_vulnsqli.php?id=1)')

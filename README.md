@@ -15,7 +15,7 @@ Using VarSQLi or any unauthorized database exploitation tool can lead to impriso
 
 > Instead of relying on database exploitation tools, we should focus on enhancing our knowledge of security, understanding common security vulnerabilities, and implementing security measures to protect our systems and data. Collaborating with security experts and complying with legal regulations will ensure safety and ethical use of information technology
 
-### setup x install tool
+### setup - install tool
 To set up VarSQLi, follow these steps:
 
 1. Clone the VarSQLi repository from GitHub using the following command:
@@ -34,7 +34,7 @@ python3 varsqli.py --help
 ```
 Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
 
-#### How To Injection - Exploit ?
+#### How To Injection - Exploit 
 - You can see that in the `--help` section, there is only one mode, `--url` to update the url to attack
 ```
               ___
@@ -82,7 +82,11 @@ options:
 
 - so we've come to the end, so what's the ending?
 
-# Ending ?
+# Ending 
 A tip and note to use :
 - Can you see how dangerous the SQL injection vulnerability is, here is a piece of advice for you, this tool is only for the nature, is to show the database name, and will never provide  dump database for users only, to ensure the security of network security
 > Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
+- Contact : [phamchienlc06@gmail.com](phamchienlc06@gmail.com)
+- Telegram Channel : [My Channel](https://t.me/Anon0psNews)
+- Telegram : [Adonis Bertha](https://t.me/anonopsvn)
+- website : [website](https://ghostmanews.blogspot.com)

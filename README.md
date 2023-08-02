@@ -19,5 +19,12 @@ To set up VarSQLi, follow these steps:
 7. python3 varsqli.py --help
 
 Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
- 
+
+# How To Injection - Exploit ?
+1. You can see that in the --help section, there is only one mode, --url to update the url to attack
+2. To attack the target , you write the command :
+3. python3 varsqli.py --url < url vulerable >
+4. the result will be
+(img )
+
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

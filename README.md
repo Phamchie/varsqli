@@ -3,6 +3,8 @@
 > - _Website_ : [Ghost Man](https://ghostmanews.blogspot.com)
 
 VarSQLi allows users to search for and exploit SQL injection vulnerabilities automatically. The tool employs techniques such as input string testing, SQL syntax analysis, and SQL statement testing to determine if a system is susceptible to SQL injection.
+
+### Screenshot
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-08-02-14-41-26-65.jpg">
 
 > However, using VarSQLi or any other database exploitation tool to attack someone else's database is illegal and can have serious consequences. Illegally accessing someone else's database may violate information security regulations and ethical standards in information technology.

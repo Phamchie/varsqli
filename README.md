@@ -1,6 +1,6 @@
 # Variable-SQL-Injection
-> _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)
-> _Website_ : [Ghost Man](https://ghostmanews.blogspot.com)
+> - _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)
+> - _Website_ : [Ghost Man](https://ghostmanews.blogspot.com)
 
 VarSQLi allows users to search for and exploit SQL injection vulnerabilities automatically. The tool employs techniques such as input string testing, SQL syntax analysis, and SQL statement testing to determine if a system is susceptible to SQL injection.
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/Screenshot_2023-08-02-14-41-26-65.jpg">

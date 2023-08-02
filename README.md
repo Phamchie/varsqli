@@ -3,6 +3,7 @@
 > - _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)
 > - _Website_ : [Ghost Man](https://ghostmanews.blogspot.com)
 > - _facebook_ : [adonis bertha](https://www.facebook.com/francesca.savino.18?mibextid=ZbWKwL)
+> - _Github_ : @Phamchie
 
 VarSQLi allows users to search for and exploit SQL injection vulnerabilities automatically. The tool employs techniques such as input string testing, SQL syntax analysis, and SQL statement testing to determine if a system is susceptible to SQL injection.
 > warning: the tool will not have a dump database function, for the sake of protecting other people's private information, and absolutely not used for any other bad purpose, especially exploiting government and school sites  learn

@@ -31,7 +31,13 @@ Once the setup is complete, you can start using VarSQLi to identify and exploit 
 2. it is the number of columns, payload , target, user , database and the target's MySQL version
 <img src="https://github.com/Phamchie/varsqli/blob/main/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg?raw=true">
 
-1. like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃
-2. and here is the target database of tables and columns that VarSQLI has exploited
+1. like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃..
+2. :)
+3. and here is the target database of tables and columns that VarSQLI has exploited
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-50-35-49.jpg">
 
-Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
+1. so we've come to the end, so what's the ending?
+# Ending ?
+A tip and note to use :
+1. Can you see how dangerous the SQL injection vulnerability is, here is a piece of advice for you, this tool is only for the nature, is to show the database name, and will never provide  dump database for users only, to ensure the security of network security
+2. Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

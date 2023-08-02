@@ -29,5 +29,9 @@ Once the setup is complete, you can start using VarSQLi to identify and exploit 
 
 1. it is starting to attack, and after a while exploiting with UNION SELECT payloads to get the column number of the website, it will announce like this
 2. it is the number of columns, payload , target, user , database and the target's MySQL version
+<img src="https://github.com/Phamchie/varsqli/blob/main/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg?raw=true">
+
+1. like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃
+2. and here is the target database of tables and columns that VarSQLI has exploited
 
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

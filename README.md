@@ -1,4 +1,7 @@
-[![.github/workflows/tests.yml](https://github.com/sqlmapproject/sqlmap/actions/workflows/tests.yml/badge.svg)](https://github.com/sqlmapproject/sqlmap/actions/workflows/tests.yml) [![Python|3.x](https://img.shields.io/badge/python-3.x-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-GPLv1-red.svg)](https://raw.githubusercontent.com/sqlmapproject/sqlmap/master/LICENSE) [![Twitter](https://img.shields.io/badge/twitter-@Anonym0us_VNPC-blue.svg)](https://twitter.com/Anonym0us_VNPC)
+- [![.github/workflows/tests.yml](https://github.com/sqlmapproject/sqlmap/actions/workflows/tests.yml/badge.svg)](https://github.com/sqlmapproject/sqlmap/actions/workflows/tests.yml)
+- [![Python|3.x](https://img.shields.io/badge/python-3.x-yellow.svg)](https://www.python.org/)
+- [![License](https://img.shields.io/badge/license-GPLv1-red.svg)](https://raw.githubusercontent.com/sqlmapproject/sqlmap/master/LICENSE)
+- [![Twitter](https://img.shields.io/badge/twitter-@Anonym0us_VNPC-blue.svg)](https://twitter.com/Anonym0us_VNPC)
 # Variable-SQL-Injection
 ### Note From VarSQLi
 > - _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)

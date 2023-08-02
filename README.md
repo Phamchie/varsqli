@@ -1,3 +1,6 @@
+- [] `Python  | 3`
+- [] `Version | 1.1.5`
+- [] `Github  | `@Phamchie
 # Variable-SQL-Injection
 ### Note From VarSQLi
 > - _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)

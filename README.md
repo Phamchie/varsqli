@@ -81,18 +81,17 @@ options:
 
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg">
 
-- like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃..
-- :)
-- and here is the target database of tables and columns that VarSQLI has exploited
+- like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃
+> and here is the target database of tables and columns that VarSQLI has exploited
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-50-35-49.jpg">
-
-- so we've come to the end, so what's the ending?
+> so we've come to the end, so what's the ending?
 
 # Ending 
 A tip and note to use :
 - Can you see how dangerous the SQL injection vulnerability is, here is a piece of advice for you, this tool is only for the nature, is to show the database name, and will never provide  dump database for users only, to ensure the security of network security
 > Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
-- Contact : [phamchienlc06@gmail.com](phamchienlc06@gmail.com)
-- Telegram Channel : [My Channel](https://t.me/Anon0psNews)
-- Telegram : [Adonis Bertha](https://t.me/anonopsvn)
-- website : [website](https://ghostmanews.blogspot.com)
+# Contact
+> - Contact : [phamchienlc06@gmail.com](phamchienlc06@gmail.com)
+> - Telegram Channel : [My Channel](https://t.me/Anon0psNews)
+> - Telegram : [Adonis Bertha](https://t.me/anonopsvn)
+> - website : [website](https://ghostmanews.blogspot.com)

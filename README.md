@@ -74,7 +74,8 @@ options:
 
 - it is starting to attack, and after a while exploiting with UNION SELECT payloads to get the column number of the website, it will announce like this
 - it is the number of columns, payload , target, user , database and the target's MySQL version
-<img src="https://github.com/Phamchie/varsqli/blob/main/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg?raw=true">
+
+<img src="https://github.com/Phamchie/varsqli/blob/main/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg">
 
 - like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃..
 - :)

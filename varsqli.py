@@ -5,7 +5,7 @@ import re
 import os
 
 def banner():
-    with open('/hello/hello.txt', 'r') as files:
+    with open('hello/hello.txt', 'r') as files:
         content = files.read()
         print(content)
 banner()

@@ -26,4 +26,8 @@ Once the setup is complete, you can start using VarSQLi to identify and exploit 
 3. python3 varsqli.py --url < url vulerable >
 4. the result will be
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-49-50-36.jpg">
+
+1. it is starting to attack, and after a while exploiting with UNION SELECT payloads to get the column number of the website, it will announce like this
+2. it is the number of columns, payload , target, user , database and the target's MySQL version
+
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

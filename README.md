@@ -25,6 +25,5 @@ Once the setup is complete, you can start using VarSQLi to identify and exploit 
 2. To attack the target , you write the command :
 3. python3 varsqli.py --url < url vulerable >
 4. the result will be
-(img )
-
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-49-50-36.jpg">
 Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.

@@ -30,14 +30,14 @@ To set up VarSQLi, follow these steps:
 3. Install the required dependencies by running the setup script:
 - `python3 setup.py`
 - `python3 varsqli.py --help`
-- Full Source Setup
+> Full Source Setup
 ```
 git clone https://github.com/Phamchie/varsqli/
 cd varsqli
 python3 setup.py
 python3 varsqli.py --help
 ```
-Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
+> Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
 
 #### How To Injection - Exploit 
 - You can see that in the `--help` section, there is only one mode, `--url` to update the url to attack
@@ -77,7 +77,7 @@ options:
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-49-50-36.jpg">
 
 - it is starting to attack, and after a while exploiting with UNION SELECT payloads to get the column number of the website, it will announce like this
-- it is the number of columns, payload , target, user , database and the target's MySQL version
+> it is the number of columns, payload , target, user , database and the target's MySQL version
 
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg">
 

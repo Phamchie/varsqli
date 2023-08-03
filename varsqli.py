@@ -789,6 +789,11 @@ if target_url:
                                         print("--------------------------")
                                         for database in database_all:
                                             print(database)
+                                        print('------------------------------------------------------------------------------')
+                                        print(database_all)
+                                        print('-------------------------------------------------------------------------------')
+                                        print("")
+                                        
                                         print("You Readly Dump Database Tables ? :")
                                         while True:
                                             print("")
@@ -1549,6 +1554,10 @@ if target_url:
                                         print("--------------------------")
                                         for database in database_all:
                                             print(database)
+                                        print('------------------------------------------------------------------------------')
+                                        print(database_all)
+                                        print('-------------------------------------------------------------------------------')
+                                        print("")
                                         print("You Readly Dump Database Tables ? :")
                                         while True:
                                             print("")

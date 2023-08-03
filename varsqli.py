@@ -762,7 +762,7 @@ if target_url:
                                         print("------------------")
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
-                                            tiem.sleep(0.30)
+                                            time.sleep(0.30)
                                         for dbmss in database_table:
                                             print('-------------------------')
                                             print("|", database, end=" | ")
@@ -1529,7 +1529,7 @@ if target_url:
                                         print("------------------")
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
-                                            tiem.sleep(0.30)
+                                            time.sleep(0.30)
                                         for dbmss in database_table:
                                             print('-------------------------')
                                             print("|", database, end=" | ")

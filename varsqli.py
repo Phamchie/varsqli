@@ -5,7 +5,7 @@ import time
 import re
 import os
 import socket
-import Threading
+import threading
 import sqlite
 from bs4 import BeautifulSoup
 

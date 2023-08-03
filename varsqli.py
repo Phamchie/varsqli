@@ -852,7 +852,8 @@ if target_url:
                                               print(f"[+] {database} --> ", dbs, user)
                                               time.sleep(0.10)
                                           print('------------------------------------------------------------------------------')
-                                          print(database_all)
+                                          for database in database_all:
+                                              print(database, end='|')
                                           print('-------------------------------------------------------------------------------')
                                           print("")
                                           print("You Readly Dump Database Tables ? :")
@@ -1674,7 +1675,8 @@ if target_url:
                                               print(f"[+] {database} --> ", dbs, user)
                                               time.sleep(0.10)
                                           print('------------------------------------------------------------------------------')
-                                          print(database_all)
+                                          for database in database_all:
+                                              print(database, end='|')
                                           print('-------------------------------------------------------------------------------')
                                           print("")
                                           print("You Readly Dump Database Tables ? :")

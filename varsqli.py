@@ -6,7 +6,6 @@ import re
 import os
 import socket
 import threading
-import sqlite
 from bs4 import BeautifulSoup
 
 def banner():

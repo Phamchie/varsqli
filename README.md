@@ -39,6 +39,9 @@ python3 varsqli.py --help
 ```
 > Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
 
+### Demo Attack 
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/lv_0_20230803103153.gif">
+
 #### How To Injection - Exploit 
 - You can see that in the `--help` section, there is only one mode, `--url` to update the url to attack
 ```

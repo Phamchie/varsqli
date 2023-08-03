@@ -1,3 +1,4 @@
+# varsqli v 1.1.5
 import requests
 import argparse
 import time
@@ -16,7 +17,13 @@ def banner():
                
 [+] Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
 ''')
-banner()
+
+def payload_file():
+    with open('hello/hello.txt', 'r') as file:
+        content = file.read()
+        print(content)
+payload_file()
+
 parser = argparse.ArgumentParser(description='VarSQLi - Auto SQL Injection tools') 
 parser.add_argument('--url', dest='url', help='URL Target (ex : https://test.com/yourpath_vulnsqli.php?id=1)')
 

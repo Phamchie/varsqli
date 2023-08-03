@@ -33,7 +33,7 @@ payload_file()
 
 parser = argparse.ArgumentParser(description='VarSQLi - Auto SQL Injection tools') 
 parser.add_argument('--url', dest='url', help='URL Target (ex : https://test.com/yourpath_vulnsqli.php?id=1)')
-parser.add_argument('--exploit', dest='exploits', help='start exploit')
+parser.add_argument('--exploit', dest='exploits', action='store_true', help='start exploit')
 args = parser.parse_args()
 
 target_url = args.url

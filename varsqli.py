@@ -777,9 +777,13 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
+                                        num_table = 0
                                         for database_table in database_all:
+                                            num_table += 1
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
+                                        print(f"[+] Found {num_table} Tables Name....")
+                                        time.sleep(1)
                                         print("--------------------------")
                                         print("Table Name | Columns Name")
                                         print("--------------------------")
@@ -1533,9 +1537,13 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
+                                        num_table = 0
                                         for database_table in database_all:
+                                            num_table += 1
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
+                                        print(f"[+] Found {num_table} Tables Name....")
+                                        time.sleep(1)
                                         print("--------------------------")
                                         print("Table Name | Columns Name")
                                         print("--------------------------")

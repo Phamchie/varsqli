@@ -771,8 +771,11 @@ if target_url:
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
+                                        print("--------------------------")
+                                        print("Table Name | Columns Name")
+                                        print("--------------------------")
+                                        for database in database_all:
+                                            print(database)
                                         print("You Readly Dump Database Tables ? :")
                                         while True:
                                             print("")
@@ -1515,8 +1518,11 @@ if target_url:
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
+                                        print("--------------------------")
+                                        print("Table Name | Columns Name")
+                                        print("--------------------------")
+                                        for database in database_all:
+                                            print(database)
                                         print("You Readly Dump Database Tables ? :")
                                         while True:
                                             print("")

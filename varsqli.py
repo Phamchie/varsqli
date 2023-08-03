@@ -1689,7 +1689,7 @@ if target_url:
                                               checking_data = r"\b\w+::\b"
                                               data_all = re.findall(checking_data, texts_html)
                                               for data in data_all:
-                                                  print("+-----------------------------------------------------+"
+                                                  print("+-----------------------------------------------------+")
                                                   print(f"[+] | {text_dump} | {text_dump2} | {dbs} |=> ", data)
                                                   print("+-----------------------------------------------------+")
                                           exit()

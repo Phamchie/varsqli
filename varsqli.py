@@ -168,7 +168,7 @@ if target_url:
                                   print("[INFO] Found Columns - (Number Count) - {}".format(count_num))
                                   print(f'''
   GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)
-  sqlmap identified the following injection point(s) with a total of 50 HTTP(s) requests:
+  varsqli identified the following injection point(s) with a total of 50 HTTP(s) requests:
   ---
   Parameter: id (GET)
       Type: boolean-based blind
@@ -996,7 +996,7 @@ if target_url:
                                   print("[INFO] Found Columns - (Number Count) - {}".format(count_num))
                                   print(f'''
   GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)
-  sqlmap identified the following injection point(s) with a total of 50 HTTP(s) requests:
+  varsqli identified the following injection point(s) with a total of 50 HTTP(s) requests:
   ---
   Parameter: id (GET)
       Type: boolean-based blind

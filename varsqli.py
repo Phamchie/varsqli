@@ -1707,4 +1707,4 @@ if target_url:
 else:
     print("Usage : python3 varsqli.py --url < URL Vulnerablity > --exploit")
     print("Help : python3 varsqli.py --help for helping")
-    exit()s
+    exit()

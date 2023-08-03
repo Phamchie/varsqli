@@ -6,8 +6,7 @@ import time
 import re
 import os
 import socket
-import Threading
-import sqlite
+import threading
 from bs4 import BeautifulSoup
 
 def banner():

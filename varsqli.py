@@ -149,7 +149,6 @@ if target_url:
                         count_num += 1
                         results = requests.get(target_url + payload)
                         if results.status_code == 200:
-                            print("[INFO] Total Response Content HTML stable : 200 OK")
                             if "The used SELECT" and "The used SELECT statements have a different number of columns" in results.text:
                                 pass
                             else:

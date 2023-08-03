@@ -771,7 +771,7 @@ if target_url:
                                         for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
-                                         for database in database_all:
+                                        for database in database_all:
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
@@ -793,7 +793,7 @@ if target_url:
                                         for database in database_all:
                                             print(f"[]fetching columns on table {database_table} in database : ", database)
                                             time.sleep(0.30)
-                                         for database in database_all:
+                                        for database in database_all:
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")

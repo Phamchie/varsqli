@@ -1,13 +1,13 @@
 # done
 # Anonymous VNPC
+# haha
 import requests
 import argparse
 import time
 import re
 import os
 import socket
-import Threading
-import sqlite
+import threading
 from bs4 import BeautifulSoup
 
 def banner():
@@ -769,7 +769,7 @@ if target_url:
                                         print("------------------")
                                         print("| table | column |")
                                         print("------------------")
-                                       for database_table in database_all:
+                                        for database_table in database_all:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
                                         print("----------------------")

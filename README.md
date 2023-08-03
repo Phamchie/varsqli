@@ -43,7 +43,7 @@ python3 varsqli.py --help
 <img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/lv_0_20230803103153.gif">
 
 #### How To Injection - Exploit 
-- You can see that in the `--help` section, there is only one mode, `--url` to update the url to attack
+- You can see that in the `--help` section, there is only one mode, `--url` and `--exploit` to update the url to attack and start Exploit
 ```
               ___
  _____         H  _____     _ _  {1.1.5}
@@ -61,11 +61,12 @@ VarSQLi - Auto SQL Injection tools
 
 options:
   -h, --help  show this help message and exit
-  --url URL   URL Target (ex :
-              https://test.com/yourpath_vulnsqli.php?id=1)
+  --url URL   URL Target (ex :            https://test.com/yourpath_vulnsqli.php?id=1)
+
+  --exploit   start exploit
 ```
 - To attack the target , you write the command :
--  `python3 varsqli.py --url < url vulerable >`
+-  `python3 varsqli.py --url < url vulerable > --exploit`
 - the result will be
 ```
 [INFO] Testing connect to target url..

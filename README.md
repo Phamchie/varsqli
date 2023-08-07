@@ -36,7 +36,7 @@ However, it is important to use this tool responsibly and within legal boundarie
 ```
 git clone https://github.com/Phamchie/varsqli-pro
 cd varsqli-pro
-pyton3 setup.py
+python3 setup.py
 python3 varsqli.py --help
 ```
 - Note: Make sure that you have the right to access and use this tool for its lawful purposes. Using this tool unethically or in violation of the law can have serious consequences. Please always follow the cybersecurity rules and regulations and use this tool responsibly

